@@ -87,10 +87,9 @@ function crearTarjetas() {
             </div>
         `;
 
-        contenedor.appendChild(tarjeta); // Agregar la tarjeta al contenedor
+        contenedor.appendChild(tarjeta); 
     });
 }
 
-// Llama a la función para crear las tarjetas
 crearTarjetas();
 
