@@ -1,0 +1,177 @@
+
+
+.btn {
+  position: relative;
+  background-color: white; 
+  color: green;
+  border: 3px solid green; 
+  padding: 20px 40px; 
+  font-size: 20px; 
+  cursor: pointer;
+  overflow: hidden; 
+  transition: color 1s ease, background-color 1s ease, border-color 1s ease, transform 1s ease, box-shadow 1s ease;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  margin-left: 42%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: green; 
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0); 
+  transition: transform 1s ease;
+  z-index: 0; 
+}
+
+.btn:hover::before {
+  transform: translate(-50%, -50%) scale(1); 
+}
+
+.btn:hover {
+  color: white;
+  background-color: green; 
+  border-color: white; 
+  transform: scale(1.1); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.btn span {
+  position: relative;
+  z-index: 1; 
+  margin-right: 5px; 
+}
+
+/* Estilo para el ícono de flecha */
+.btn::after {
+  content: '➔'; 
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  font-size: 28px; 
+  color: white;
+  transform: translateY(-50%) translateX(0); 
+  transition: opacity 1s ease; 
+  opacity: 1; 
+  z-index: 1; 
+}
+
+.btn:hover::after {
+  animation: moveArrow 2s linear infinite;
+}
+
+@keyframes moveArrow {
+  0% {
+      transform: translateY(-50%) translateX(0); 
+      opacity: 1; 
+  }
+  100% {
+      transform: translateY(-50%) translateX(calc(100% + 10px)); 
+      opacity: 0; 
+  }
+}
+
+/* Animación de pulso para el botón */
+@keyframes pulse {
+  0% {
+      transform: scale(1); 
+  }
+  50% {
+      transform: scale(1.05); 
+  }
+  100% {
+      transform: scale(1); 
+  }
+}
+
+.btn:not(:hover) {
+  animation: pulse 4s infinite; 
+}
+
+
+
+
+/*icono de whatsapp*/
+.whatsapp-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--highlight-green);
+  color: var(--text-white);
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px var(--light-black);
+  font-size: 32px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  z-index: 999;
+  text-decoration: none;
+}
+
+.whatsapp-icon:hover {
+  background-color: #128C7E;
+}
+
+
+/*icono de scroll*/
+.scroll-to-top {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  background-color: var(--highlight-green);
+  color: var(--text-white);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px var(--light-black);
+  font-size: 24px;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.scroll-to-top:hover {
+  background-color: #00cc4a;
+}
+
+.scroll-to-top i {
+  margin: 0;
+}
+
+.scroll-to-top.show {
+  opacity: 1;
+  z-index: 999;
+}
+
+
+@media (max-width: 768px) {
+  .scroll-to-top {
+      width: 0px;
+      height: 0px;
+      pointer-events: none;
+      display: none;
+      visibility: hidden;
+  }
+
+  .whatsapp-icon{
+    right: 15px;
+    width: 45px;
+    height: 45px;
+    margin-bottom: 15px;
+  }
+}
