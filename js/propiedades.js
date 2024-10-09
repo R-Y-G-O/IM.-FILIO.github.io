@@ -120,21 +120,18 @@ function aplicarFiltros() {
     });
 
     const contenedor = document.getElementById('tarjetas-container-filtrado');
-    contenedor.innerHTML = ''; // Limpiar el contenedor de tarjetas
+    contenedor.innerHTML = '';
 
     if (propiedadesFiltradas.length === 0) {
-        // Mostrar mensaje de error si no hay propiedades
         const mensajeError = document.createElement('div');
         mensajeError.className = 'mensaje-error';
         mensajeError.textContent = 'No se encontraron propiedades con esos criterios.';
         contenedor.appendChild(mensajeError);
     } else {
-        // Si hay propiedades, crear las tarjetas
         propiedadesFiltradas.forEach(propiedad => {
             const tarjeta = document.createElement('div');
             tarjeta.className = 'property-card';
-
-            // Construir la URL del iframe de Google Maps con las coordenadas
+            
             const mapaSrc = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.748678842572!2d${propiedad.coordenadas.lng}!3d${propiedad.coordenadas.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb24a5f500c17%3A0x5b02910719db8c3a!2sGoogleplex!5e0!3m2!1ses!2s!4v1635946085203!5m2!1ses!2s`;
 
             tarjeta.innerHTML = `
