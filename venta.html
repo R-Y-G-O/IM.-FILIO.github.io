@@ -6,19 +6,17 @@
     <title>Departamentos en Venta - Piura</title>
     <link rel="stylesheet" href="estilos/navbar.css">
     <link rel="stylesheet" href="estilos/estilo.css">
+    <link rel="stylesheet" href="estilos/botones.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: var(--light-grey);
-        }
-
+body {
+    background-image: url('estilos/t.webp'); 
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
         header {
             background-color: var(--white);
             padding: 10px;
@@ -38,12 +36,12 @@
         }
 
         .sidebar {
-            width: 350px;
+            width: 380px;
             background-color: var(--white);
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 2px 10px var(--light-black);
-            max-height: 110vh;
+            max-height: 120vh;
         }
 
         .create-alert-btn, .filter-btn {
@@ -59,10 +57,11 @@
             align-items: center;
             justify-content: center;
             gap: 5px;
+            margin-bottom: 40px;
         }
 
         .create-alert-btn:hover, .filter-btn:hover {
-            background-color: rgb(90, 165, 0); /* Verde más oscuro al pasar el mouse */
+            background-color: rgb(90, 165, 0); 
             transform: translateY(-2px);
         }
 
@@ -97,7 +96,8 @@
         }
 
         .properties h2 {
-            margin-bottom: 20px;
+            margin-top: 0px;
+            margin-bottom: 10px;
             color: var(--text-dark);
         }
 
