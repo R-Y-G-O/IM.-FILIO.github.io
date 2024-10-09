@@ -314,6 +314,7 @@ a {
 
 }
 
+
 .title_imfromacion{
     text-align: center;
     margin-top: 10px;
@@ -437,7 +438,7 @@ a {
     margin-bottom: 10px;
 }
 
-.contenido a {
+.contenido button {
     display: inline-block;
     padding: 10px;
     background-color: var(--primary-green);
@@ -506,16 +507,16 @@ a {
 /* Muestra 2 tarjetas en pantallas medianas */
 @media (max-width: 768px) and (min-width: 480px) {
     .tarjeta {
-        min-width: calc(30% - 20px); /* Muestra 2 tarjetas (50% del ancho) */
-        height: 550px; /* Altura para pantallas medianas */
+        min-width: calc(30% - 20px);
+        height: 550px; 
     }
 }
 
 /* Muestra 1 tarjeta en pantallas pequeñas */
 @media (max-width: 479px) {
     .tarjeta {
-        min-width: 26.4%; /* Muestra 1 tarjeta */
-        height: 400px; /* Altura para pantallas pequeñas */
+        min-width: 26.4%; 
+        height: 400px;
     }
 }
 
@@ -732,16 +733,6 @@ a {
 
 
 
-
-
-
-
-
-
-
-
-
-
 .cities-highlighted {
     text-align: center;
     padding: 40px;
@@ -867,6 +858,80 @@ h3 {
         height: 1600px;
     }
 
+}
+
+
+.formulario {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 9999; /* Asegúrate de que esté por encima de otros elementos */
+    border-radius: 5px;
+    display: none; /* Inicialmente oculto */
+}
+
+.formulario h2 {
+    margin-bottom: 15px;
+}
+
+.formulario label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.formulario input, 
+.formulario textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.abrir_formulario{
+    padding: 10px 15px;
+    background: var(--primary-green);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.cerrar_formulario{
+    padding: 10px 15px;
+    background:rgb(255, 62, 62);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.cerrar_formulario:hover{
+    background:rgb(255, 0, 0);
+}
+
+.abrir_formulario:hover {
+    background: var(--highlight-green);
+}
+
+.formulario .info-propiedad {
+    margin-bottom: 20px;
+    border: 1px solid var(--highlight-green);
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 9998;
+    display: none; 
 }
 
 
@@ -1005,22 +1070,6 @@ h3 {
         margin-left: 30px;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

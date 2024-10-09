@@ -88,7 +88,7 @@ function crearTarjetas() {
             <div class="contenido">
                 <h3>${propiedad.titulo}</h3>
                 <p>${propiedad.descripcion}</p>
-                <a href="${propiedad.link}">Ver más detalles</a>
+                <button onclick="contactar('${propiedad.titulo}')">CONTACTAR</button> 
             </div>
             <div class="mapa">
                 <iframe src="${mapaSrc}" allowfullscreen=""></iframe>
@@ -131,7 +131,7 @@ function aplicarFiltros() {
         propiedadesFiltradas.forEach(propiedad => {
             const tarjeta = document.createElement('div');
             tarjeta.className = 'property-card';
-            
+
             const mapaSrc = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.748678842572!2d${propiedad.coordenadas.lng}!3d${propiedad.coordenadas.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb24a5f500c17%3A0x5b02910719db8c3a!2sGoogleplex!5e0!3m2!1ses!2s!4v1635946085203!5m2!1ses!2s`;
 
             tarjeta.innerHTML = `
@@ -154,3 +154,36 @@ function aplicarFiltros() {
         });
     }
 }
+
+
+
+function contactar(titulo) {
+    const propiedad = propiedades.find(prop => prop.titulo === titulo);
+    
+    document.getElementById('titulo-propiedad-info').innerText = propiedad.titulo;
+    document.getElementById('descripcion-propiedad-info').innerText = propiedad.descripcion;
+    document.getElementById('precio-propiedad-info').innerText = `$${propiedad.precio}`;
+    document.getElementById('ubicacion-propiedad-info').innerText = propiedad.ubicacion;
+    document.getElementById('area-propiedad-info').innerText = propiedad.tamano;
+
+    document.getElementById('titulo-propiedad').value = titulo; 
+    document.getElementById('overlay').style.display = 'block'; 
+    document.getElementById('formulario-contacto').style.display = 'block'; 
+}
+
+function cerrarFormulario() {
+    document.getElementById('overlay').style.display = 'none'; 
+    document.getElementById('formulario-contacto').style.display = 'none'; 
+}
+
+
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    alert("Formulario enviado para la propiedad: " + document.getElementById('titulo-propiedad').value);
+    
+    cerrarFormulario();
+});
+
+
+

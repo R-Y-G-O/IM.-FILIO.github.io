@@ -35,7 +35,7 @@ const navbarHTML = `
         <li class="mobile-menu-item"><a href="index.html">INICIO</a></li>
         <li class="mobile-menu-item"><a href="nosotros.html">NOSOTROS</a></li>
         <li class="mobile-menu-item"><a href="servicios.html">SERVICIOS</a></li>
-        <li><a href="venta.html">COMPRAR</a></li>
+        <li class="mobile-menu-item"><a href="venta.html">COMPRAR</a></li>
         <li class="mobile-menu-item"><a href="contacto.html">CONTÁCTANOS</a></li>
     </ul>
     <img src="img/logo/Logo_Verde_sin_fondo.png" alt="Logo Móvil" class="mobile-logo">
