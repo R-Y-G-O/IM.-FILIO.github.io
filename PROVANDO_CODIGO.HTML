@@ -1,54 +1,62 @@
-<div id="contact-modal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Formulario de Contacto</h2>
-        <form id="contact-form">
-            <label for="titulo-propiedad">Título de la propiedad:</label>
-            <input type="text" id="titulo-propiedad" name="titulo" readonly>
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-    </div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archivo HTML de 1 MB</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Archivo HTML de 1 MB</h1>
+<p>
+    Este archivo está diseñado para pesar aproximadamente 1 MB. 
+    A continuación, se repite un texto para alcanzar el tamaño deseado.
+</p>
+
+<div id="contenido">
+    <!-- Contenido repetitivo -->
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Vivamus lacinia odio vitae vestibulum. Lorem ipsum dolor sit amet, 
+        consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Vivamus lacinia odio vitae vestibulum. Lorem ipsum dolor sit amet, 
+        consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Vivamus lacinia odio vitae vestibulum. Lorem ipsum dolor sit amet, 
+        consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
+    </p>
 </div>
 
-<style>
-    .modal {
-    display: none; /* Oculto por defecto */
-    position: fixed; /* Fijo en la pantalla */
-    z-index: 1000; /* Asegura que el modal esté por encima */
-    left: 0;
-    top: 0;
-    width: 100%; /* Ancho completo */
-    height: 100%; /* Alto completo */
-    overflow: auto; /* Agregar scroll si es necesario */
-    background-color: rgba(0,0,0,0.4); /* Fondo oscuro */
-}
+<script>
+    // Función para llenar el contenido hasta que el tamaño alcance 1 MB
+    function llenarContenido() {
+        const contenidoDiv = document.getElementById('contenido');
+        const texto = `
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Vivamus lacinia odio vitae vestibulum. Lorem ipsum dolor sit amet, 
+            consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
+        `;
 
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* Margen superior */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Ancho del modal */
-}
+        // Repetir el texto varias veces
+        while (contenidoDiv.innerHTML.length < 1000000) {
+            contenidoDiv.innerHTML += texto;
+        }
+    }
 
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
+    llenarContenido(); // Llamar a la función para llenar el contenido
+</script>
 
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-</style>
+</body>
+</html>

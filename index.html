@@ -234,11 +234,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   </section>
 
 
-<div id="overlay" class="overlay" style="display:none;"></div>
+  <div id="overlay" class="overlay" style="display:none;"></div>
   <div id="formulario-contacto" class="formulario" style="display:none;">
       <h2>SOLICITAR INFORMACION</h2>
       <div class="info-propiedad">
-          <p><strong>Título:</strong> <span id="titulo-propiedad-info"></span></p>
+          <p><strong>Título:</strong> <span id="titulo-propiedad-info" name=""></span></p>
           <p><strong>Descripción:</strong> <span id="descripcion-propiedad-info"></span></p>
           <p><strong>Precio:</strong> <span id="precio-propiedad-info"></span></p>
           <p><strong>Ubicación:</strong> <span id="ubicacion-propiedad-info"></span></p>
@@ -246,6 +246,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       </div>
       <form id="contactForm">
           <input type="hidden" id="titulo-propiedad" name="titulo">
+          <input type="hidden" id="descripcion-propiedad" name="descripcion">
+          <input type="hidden" id="precio-propiedad" name="precio">
+          <input type="hidden" id="ubicacion-propiedad" name="ubicacion">
+          <input type="hidden" id="area-propiedad" name="area">
+        
           <label for="nombre">Nombre:</label>
           <input type="text" id="nombre" name="nombre" required>
           
@@ -259,6 +264,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
           <button type="button" onclick="cerrarFormulario()" class="cerrar_formulario">Cancelar</button>
       </form>
   </div>
+  
+
   
 
 
@@ -729,7 +736,37 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         });
     });
 </script>
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+    (function() {
+        emailjs.init("Y28WmP_fwZjZfdkmX"); // Reemplaza "TU_USER_ID" con tu User ID de EmailJS
+    })();
 
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+event.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
+
+// Muestra el overlay mientras se envía el formulario
+document.getElementById("overlay").style.display = "block";
+
+// Recolecta los datos del formulario
+const serviceID = 'service_syq9sgg'; 
+const templateID = 'template_xr0hn9b';
+
+emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+        alert("Formulario enviado para la propiedad: " + document.getElementById('titulo-propiedad').value);
+        cerrarFormulario();
+    }, (err) => {
+        alert(JSON.stringify(err));
+        console.log('Failed to send email. Error:', err);
+    })
+    .finally(() => {
+        // Oculta el overlay
+        document.getElementById("overlay").style.display = "none";
+    });
+});
+
+</script>
     <script src="js/carrusel.js" defer></script>      
     <script src="js/scroll.js"></script>  
     <script src="js/navbar.js"></script>

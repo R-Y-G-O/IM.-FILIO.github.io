@@ -6,8 +6,7 @@ const propiedades = [
         descripcion: "Amplia casa de 3 habitaciones con jardín privado, cerca de parques y centros comerciales. Ideal para familias.",
         precio: 300000,
         ubicacion: "Ciudad Jardín",
-        tamano: 150,
-        link: "#",
+        area: 150,
         coordenadas: { lat: -34.601, lng: -58.383 } // Ejemplo de coordenadas
     },
     {
@@ -17,8 +16,7 @@ const propiedades = [
         descripcion: "Oficina totalmente equipada en edificio corporativo. Espacio ideal para empresas en crecimiento.",
         precio: 30000,
         ubicacion: "Distrito Empresarial",
-        tamano: 100,
-        link: "#",
+        area: 100,
         coordenadas: { lat: -34.603, lng: -58.385 } // Ejemplo de coordenadas
     },
     {
@@ -28,8 +26,7 @@ const propiedades = [
         descripcion: "Lujoso departamento de 2 habitaciones con vista panorámica y acceso a todos los servicios.",
         precio: 250000,
         ubicacion: "Centro Histórico",
-        tamano: 90,
-        link: "#",
+        area: 90,
         coordenadas: { lat: -34.604, lng: -58.386 } // Ejemplo de coordenadas
     },
     {
@@ -39,8 +36,7 @@ const propiedades = [
         descripcion: "Local ideal para retail, en una ubicación estratégica con gran afluencia de clientes.",
         precio: 120000,
         ubicacion: "Avenida Principal",
-        tamano: 80,
-        link: "#",
+        area: 80,
         coordenadas: { lat: -34.605, lng: -58.387 } // Ejemplo de coordenadas
     },
     {
@@ -50,8 +46,7 @@ const propiedades = [
         descripcion: "Amplia bodega con fácil acceso a carreteras y equipada con sistemas de seguridad.",
         precio: 50000,
         ubicacion: "Parque Industrial",
-        tamano: 300,
-        link: "#",
+        area: 300,
         coordenadas: { lat: -34.606, lng: -58.388 } // Ejemplo de coordenadas
     },
     {
@@ -61,8 +56,7 @@ const propiedades = [
         descripcion: "Hermosa casa de campo de 4 habitaciones con piscina privada, ideal para escapadas de fin de semana.",
         precio: 400000,
         ubicacion: "Campo Verde",
-        tamano: 200,
-        link: "#",
+        area: 200,
         coordenadas: { lat: -34.607, lng: -58.389 } // Ejemplo de coordenadas
     }
 ];
@@ -78,7 +72,7 @@ function crearTarjetas() {
         tarjeta.dataset.precio = propiedad.precio;
         tarjeta.dataset.ubicacion = propiedad.ubicacion;
         tarjeta.dataset.tipo = propiedad.tipo; 
-        tarjeta.dataset.tamano = propiedad.tamano;
+        tarjeta.dataset.area = propiedad.area;
 
         // Construir la URL del iframe de Google Maps con las coordenadas
         const mapaSrc = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.748678842572!2d${propiedad.coordenadas.lng}!3d${propiedad.coordenadas.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb24a5f500c17%3A0x5b02910719db8c3a!2sGoogleplex!5e0!3m2!1ses!2s!4v1635946085203!5m2!1ses!2s`;
@@ -112,7 +106,7 @@ function aplicarFiltros() {
 
     const propiedadesFiltradas = propiedades.filter(propiedad => {
         const precioValido = propiedad.precio >= precioMin && propiedad.precio <= precioMax;
-        const superficieValida = propiedad.tamano >= superficieMin && propiedad.tamano <= superficieMax;
+        const superficieValida = propiedad.area >= superficieMin && propiedad.area <= superficieMax;
         const distritoValido = distritosSeleccionados.length === 0 || distritosSeleccionados.includes(propiedad.ubicacion);
         const tipoValido = tiposSeleccionados.length === 0 || tiposSeleccionados.includes(propiedad.tipo);
 
@@ -140,7 +134,7 @@ function aplicarFiltros() {
                     <h3>${propiedad.titulo}</h3>
                     <p>${propiedad.descripcion}</p>
                     <p>Ubicación: ${propiedad.ubicacion}</p>
-                    <p>Precio: $${propiedad.precio}, Tamaño: ${propiedad.tamano}m2</p>
+                    <p>Precio: $${propiedad.precio}, Tamaño: ${propiedad.area}m2</p>
                 </div>
                 <div class="mapa">
                     <iframe src="${mapaSrc}" allowfullscreen=""></iframe>
@@ -164,7 +158,14 @@ function contactar(titulo) {
     document.getElementById('descripcion-propiedad-info').innerText = propiedad.descripcion;
     document.getElementById('precio-propiedad-info').innerText = `$${propiedad.precio}`;
     document.getElementById('ubicacion-propiedad-info').innerText = propiedad.ubicacion;
-    document.getElementById('area-propiedad-info').innerText = propiedad.tamano;
+    document.getElementById('area-propiedad-info').innerText = propiedad.area;
+
+      // Asignar valores a los campos ocultos del formulario
+      document.getElementById('titulo-propiedad').value = propiedad.titulo; 
+      document.getElementById('descripcion-propiedad').value = propiedad.descripcion;
+      document.getElementById('precio-propiedad').value = propiedad.precio;
+      document.getElementById('ubicacion-propiedad').value = propiedad.ubicacion;
+      document.getElementById('area-propiedad').value = propiedad.area;
 
     document.getElementById('titulo-propiedad').value = titulo; 
     document.getElementById('overlay').style.display = 'block'; 

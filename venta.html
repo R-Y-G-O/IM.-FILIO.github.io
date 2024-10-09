@@ -66,7 +66,6 @@
             </div>
         </section>
 
-
         <div id="overlay" class="overlay" style="display:none;"></div>
         <div id="formulario-contacto" class="formulario" style="display:none;">
             <h2>SOLICITAR INFORMACION</h2>
@@ -79,6 +78,11 @@
             </div>
             <form id="contactForm">
                 <input type="hidden" id="titulo-propiedad" name="titulo">
+                <input type="hidden" id="descripcion-propiedad" name="descripcion">
+                <input type="hidden" id="precio-propiedad" name="precio">
+                <input type="hidden" id="ubicacion-propiedad" name="ubicacion">
+                <input type="hidden" id="area-propiedad" name="area">
+              
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required>
                 
@@ -117,6 +121,39 @@
             aplicarFiltros(); // Llama a la función para aplicar filtros
         });
     </script>
+
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("Y28WmP_fwZjZfdkmX"); // Reemplaza "TU_USER_ID" con tu User ID de EmailJS
+        })();
+
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
+
+    // Muestra el overlay mientras se envía el formulario
+    document.getElementById("overlay").style.display = "block";
+
+    // Recolecta los datos del formulario
+    const serviceID = 'service_syq9sgg'; 
+    const templateID = 'template_xr0hn9b';
+
+    emailjs.sendForm(serviceID, templateID, this)
+        .then(() => {
+            alert("Formulario enviado para la propiedad: " + document.getElementById('titulo-propiedad').value);
+            cerrarFormulario();
+        }, (err) => {
+            alert(JSON.stringify(err));
+            console.log('Failed to send email. Error:', err);
+        })
+        .finally(() => {
+            // Oculta el overlay
+            document.getElementById("overlay").style.display = "none";
+        });
+});
+
+    </script>
+    
   <script src="js/navbar.js"></script>
   <script src="js/scroll.js" defer></script>
 </body>
