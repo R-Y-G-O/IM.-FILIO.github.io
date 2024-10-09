@@ -10,9 +10,7 @@ const navbarHTML = `
             <li><a href="index.html">INICIO</a></li>
             <li><a href="nosotros.html">NOSOTROS</a></li>
             <li><a href="servicios.html">SERVICIOS</a></li>
-            <li class="dropdown">
-                <a href="#area_proyectos">PROYECTOS</a>
-            </li>
+            <li><a href="venta.html">COMPRAR</a></li>
             <li><a href="contacto.html">CONTÁCTANOS</a></li>
         </ul>
         <div class="navbar-right">
@@ -37,9 +35,7 @@ const navbarHTML = `
         <li class="mobile-menu-item"><a href="index.html">INICIO</a></li>
         <li class="mobile-menu-item"><a href="nosotros.html">NOSOTROS</a></li>
         <li class="mobile-menu-item"><a href="servicios.html">SERVICIOS</a></li>
-        <li class="mobile-menu-item">
-            <a href="#area_proyectos">PROYECTOS</a>
-        </li>
+        <li><a href="venta.html">COMPRAR</a></li>
         <li class="mobile-menu-item"><a href="contacto.html">CONTÁCTANOS</a></li>
     </ul>
     <img src="img/logo/Logo_Verde_sin_fondo.png" alt="Logo Móvil" class="mobile-logo">
@@ -144,21 +140,3 @@ function loadpie() {
 
 document.addEventListener('DOMContentLoaded', loadpie);
 
-//dddd
-document.addEventListener('DOMContentLoaded', function () {
-    const currentPath = window.location.pathname.split("/").pop();
-    const navbarLinks = document.querySelectorAll('.navbar-center a');
-    const dropdownParent = document.querySelector('.dropdown > a');
-
-    navbarLinks.forEach(link => {
-        const linkPath = link.getAttribute('href').split("/").pop();
-        if (linkPath === currentPath) {
-            link.classList.add('active');
-        }
-    });
-
-    const projectsPaths = ['proyectos_institucionales.html', 'proyectos_industriales.html', 'proyectos_salud.html'];
-    if (projectsPaths.includes(currentPath)) {
-        dropdownParent.classList.add('active');
-    }
-});

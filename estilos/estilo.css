@@ -10,7 +10,6 @@
     --text-grey: #464646;
     --text-white: #fff;
     --border-color: #ddd;
-    --suggestion-active-text-color: white;
 }
 
 body, html {
@@ -259,65 +258,6 @@ a {
 }
 
 
-
-
-.proyectos-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px; 
-    width: 75%;
-    margin: 0 auto;  
-    margin-bottom: 70px;
-}
-
-.proyecto-item {
-    position: relative;
-    overflow: hidden;  
-    height: 240px;  
-    transition: transform 0.3s ease;  
-
-}
-
-.proyecto-image {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.proyecto-image img {
-    position: absolute;  
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    transform: translate(-50%, -50%) scale(1.1); 
-    transition: transform 0.3s ease; 
-    border-radius: 55px;
-    border: 10px solid #000; 
-}
-
-.proyecto-text {
-    position: absolute;
-    top: 50%;  
-    left: 50%;  
-    width: 95%; 
-    transform: translate(-50%, -50%); 
-    color: var(--text-dark);
-    font-size: 18px;
-    padding: 10px;
-    z-index: 1;
-    text-align: center;
-    white-space: normal;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    font-weight: bold;    
-    filter: drop-shadow(1px 1px 1px rgba(255, 255, 255, 1));
-}
-
-.proyecto-item:hover .proyecto-image img {
-    transform: translate(-50%, -50%) scale(1.3);  
-}
 
 
 
@@ -579,18 +519,381 @@ a {
     }
 }
 
+
+
+.slide-card {
+    position: fixed;
+    top: 20%;
+    left: -215px;
+    width: 220px;
+    max-height: 450px;
+    background-color: #fff;
+    box-shadow: 3px 0 15px rgba(0, 0, 0, 0.2);
+    transition: left 0.6s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    border-radius: 8px;
+    z-index: 1000;
+    opacity: 0.95;
+    transform: scale(1.1);
+    overflow: hidden;
+}
+
+.slide-card.active {
+    left: 10px;
+    transform: scale(1);
+}
+
+.card-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.card-content img:hover {
+    transform: scale(1.05);
+}
+
+.card-content h3 {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}
+
+.card-content p {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+}
+
+.card-content .details {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #555;
+    text-align: center;
+    max-height: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+#cardLink {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+#cardLink:hover {
+    background-color: #0056b3;
+}
+
+#closeCard {
+    position: absolute;
+    top: -6px;
+    right: -3px;
+    padding: 1px;
+    background-color: transparent;
+    color: red; 
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#closeCard.active {
+    color: green; 
+}
+
+#closeCard:hover {
+    transform: rotate(90deg);
+}
+
+#viewOffer {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s ease;
+}
+
+#viewOffer:hover {
+    background-color: #218838;
+}
+
+
+
+.testimonials-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.testimonial-card {
+    background-color: #fff;
+    border-radius: 15px;
+    border: 3px solid rgb(0, 255, 42);
+    width: 250px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.testimonial-card img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.testimonial-card h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.testimonial-card span {
+    display: block;
+    color: #4CAF50;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-card:hover img {
+    transform: scale(1.1);
+}
+
+.testimonial-card {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.testimonial-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.testimonial-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.testimonial-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.testimonial-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cities-highlighted {
+    text-align: center;
+    padding: 40px;
+}
+
+/* Diseño del grid ajustado */
+.cities-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 140px; 
+    gap: 0; 
+    width: 100%; 
+    height: 500px; 
+}
+
+/* Estilos de las tarjetas */
+.city-card {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    border: 2px solid var(--highlight-green); 
+}
+
+.city-card:hover {
+    transform: scale(1.05);
+}
+
+/* Formas irregulares en el grid */
+.city-card.lima {
+    margin-left: 50px;
+    grid-column: span 4;
+    grid-row: span 3;
+}
+
+.city-card.arequipa {
+    grid-column: span 3;
+    grid-row: span 2;
+}
+
+.city-card.puno {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.city-card.loreto {
+    margin-right: 50px;
+    grid-column: span 3;
+    grid-row: span 1;
+}
+
+.city-card.cusco {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.city-card.chiclayo {
+    margin-right: 50px;
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.city-card.ica {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.city-card.ayacucho {
+    grid-column: span 3;
+    grid-row: span 1;
+}
+
+/* Estilos de la superposición */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: left;
+    transition: background 0.3s ease;
+    height: 75px;
+}
+
+.city-card:hover .overlay {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+h3 {
+    margin-bottom: 10px;
+    margin-top: -10px;
+    font-size: 20px;
+}
+
+.explore-btn {
+    color: #fff;
+    text-decoration: none;
+    background-color: var(--primary-green);
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.explore-btn:hover {
+    background-color: var(--highlight-green);
+}
+
+@media (max-width: 767px) {
+    .city-card.loreto{
+        margin-right: 0px;
+    }
+    .city-card.chiclayo{
+        margin-right: 0px;
+    }
+    .city-card.lima{
+        margin-left: 0px;
+    }
+    .cities-grid {
+        grid-template-columns: repeat(2, 1fr);
+        height: 1600px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Estilos generales para móviles */
 @media (max-width: 767px) {
     .proyectos-container {
-        grid-template-columns: 1fr; /* Una columna para pantallas pequeñas (celulares) */
+        grid-template-columns: 1fr; 
     }
 
     .proyecto-item {
-        height: 200px; /* Reduce la altura para celulares */
+        height: 200px; 
     }
 
     .proyecto-text {
-        font-size: 14px; /* Tamaño más pequeño del texto en móviles */
+        font-size: 14px; 
     }
 
     /* Ajustes en la sección de información */
@@ -722,100 +1025,6 @@ a {
 
 
 
-.testimonials-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.testimonials {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.testimonial-card {
-    background-color: #fff;
-    border-radius: 15px;
-    border: 3px solid rgb(0, 255, 42);
-    width: 250px;
-    padding: 30px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-    position: relative;
-}
-
-.testimonial-card img {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    margin-bottom: 20px;
-    transition: transform 0.3s ease;
-    border: 1px solid rgb(0, 0, 0);
-}
-
-.testimonial-card h3 {
-    color: #333;
-    margin-bottom: 15px;
-    font-size: 20px;
-}
-
-.testimonial-card p {
-    font-style: italic;
-    color: #666;
-    margin-bottom: 20px;
-    font-size: 15px;
-}
-
-.testimonial-card span {
-    display: block;
-    color: #4CAF50;
-    font-weight: bold;
-    font-size: 18px;
-    margin-top: 10px;
-}
-
-.testimonial-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-.testimonial-card:hover img {
-    transform: scale(1.1);
-}
-
-/* Animación para la entrada de las tarjetas */
-.testimonial-card {
-    opacity: 0;
-    transform: translateY(50px);
-    animation: fadeInUp 0.6s ease forwards;
-}
-
-/* Animación con retraso progresivo para cada tarjeta */
-.testimonial-card:nth-child(1) {
-    animation-delay: 0.1s;
-}
-
-.testimonial-card:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.testimonial-card:nth-child(3) {
-    animation-delay: 0.3s;
-}
-
-.testimonial-card:nth-child(4) {
-    animation-delay: 0.4s;
-}
-
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 
 
@@ -841,119 +1050,4 @@ a {
 
 
 
-
-
-.slide-card {
-    position: fixed;
-    top: 20%;
-    left: -215px;
-    width: 220px;
-    max-height: 450px;
-    background-color: #fff;
-    box-shadow: 3px 0 15px rgba(0, 0, 0, 0.2);
-    transition: left 0.6s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
-    border-radius: 8px;
-    z-index: 1000;
-    opacity: 0.95;
-    transform: scale(1.1);
-    overflow: hidden;
-}
-
-.slide-card.active {
-    left: 10px;
-    transform: scale(1);
-}
-
-.card-content img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
-
-.card-content img:hover {
-    transform: scale(1.05);
-}
-
-.card-content h3 {
-    margin-top: 10px;
-    text-align: center;
-    font-size: 16px;
-    color: #333;
-}
-
-.card-content p {
-    margin-top: 5px;
-    font-size: 12px;
-    color: #666;
-    text-align: center;
-}
-
-.card-content .details {
-    margin-top: 10px;
-    font-size: 12px;
-    color: #555;
-    text-align: center;
-    max-height: 80px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-}
-
-#cardLink {
-    margin-top: 10px;
-    padding: 5px 10px;
-    background-color: #007BFF;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 12px;
-}
-
-#cardLink:hover {
-    background-color: #0056b3;
-}
-
-#closeCard {
-    position: absolute;
-    top: -6px;
-    right: -3px;
-    padding: 1px;
-    background-color: transparent;
-    color: red; 
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-#closeCard.active {
-    color: green; 
-}
-
-#closeCard:hover {
-    transform: rotate(90deg);
-}
-
-#viewOffer {
-    margin-top: 10px;
-    padding: 5px 10px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 12px;
-    transition: background-color 0.3s ease;
-}
-
-#viewOffer:hover {
-    background-color: #218838;
-}
 
