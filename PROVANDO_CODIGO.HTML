@@ -1,62 +1,171 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Archivo HTML de 1 MB</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.5;
-            padding: 20px;
-        }
-    </style>
-</head>
-<body>
+<style>
+    .cities-highlighted {
+    text-align: center;
+    padding: 40px;
+}
 
-<h1>Archivo HTML de 1 MB</h1>
-<p>
-    Este archivo está diseñado para pesar aproximadamente 1 MB. 
-    A continuación, se repite un texto para alcanzar el tamaño deseado.
-</p>
+/* Diseño del grid ajustado */
+.cities-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 140px; 
+    gap: 0; 
+    width: 100%; 
+    height: 500px; 
+}
 
-<div id="contenido">
-    <!-- Contenido repetitivo -->
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-        Vivamus lacinia odio vitae vestibulum. Lorem ipsum dolor sit amet, 
-        consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
+/* Estilos de las tarjetas */
+.city-card {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    border: 2px solid var(--highlight-green); 
+}
+
+.city-card:hover {
+    transform: scale(1.05);
+}
+
+/* Formas irregulares en el grid */
+.city-card.lima {
+    margin-left: 50px;
+    grid-column: span 4;
+    grid-row: span 3;
+}
+
+.city-card.arequipa {
+    grid-column: span 3;
+    grid-row: span 2;
+}
+
+.city-card.puno {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.city-card.loreto {
+    margin-right: 50px;
+    grid-column: span 3;
+    grid-row: span 1;
+}
+
+.city-card.cusco {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.city-card.chiclayo {
+    margin-right: 50px;
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.city-card.ica {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.city-card.ayacucho {
+    grid-column: span 3;
+    grid-row: span 1;
+}
+
+/* Estilos de la superposición */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: left;
+    transition: background 0.3s ease;
+    height: 75px;
+}
+
+.city-card:hover .overlay {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+h3 {
+    margin-bottom: 10px;
+    margin-top: -10px;
+    font-size: 20px;
+}
+
+.explore-btn {
+    color: #fff;
+    text-decoration: none;
+    background-color: var(--primary-green);
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.explore-btn:hover {
+    background-color: var(--highlight-green);
+}
+
+</style>
+<section id="proyectos">
+    <h1 class="title">
+        <i class="fa-solid fa-drafting-compass" id="icon"></i>ENCUENTRA TU INMUEBLE
+        <i class="fa-solid fa-drafting-compass" id="icon_gi"></i>
+    </h1>
+    <p class="text">
+      Busca y encuentra miles de propiedades en todas las ciudades. Estás a un paso de encontrar tu inmueble; en la ciudad donde anhelas vivir. No esperes más, encuéntralo aquí.
     </p>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-        Vivamus lacinia odio vitae vestibulum. Lorem ipsum dolor sit amet, 
-        consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
-    </p>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-        Vivamus lacinia odio vitae vestibulum. Lorem ipsum dolor sit amet, 
-        consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
-    </p>
-</div>
-
-<script>
-    // Función para llenar el contenido hasta que el tamaño alcance 1 MB
-    function llenarContenido() {
-        const contenidoDiv = document.getElementById('contenido');
-        const texto = `
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Vivamus lacinia odio vitae vestibulum. Lorem ipsum dolor sit amet, 
-            consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
-        `;
-
-        // Repetir el texto varias veces
-        while (contenidoDiv.innerHTML.length < 1000000) {
-            contenidoDiv.innerHTML += texto;
-        }
-    }
-
-    llenarContenido(); // Llamar a la función para llenar el contenido
-</script>
-
-</body>
-</html>
+      <div class="cities-grid">
+          <div class="city-card lima" style="background-image: url('img/obras-de-construccion-corporacion-.webp')">
+              <div class="overlay">
+                  <h3>LIMA</h3>
+                  <a href="#" class="explore-btn">Explore</a>
+              </div>
+          </div>
+          <div class="city-card arequipa" style="background-image: url('img/obras-de-construccion-corporacion-.webp')">
+              <div class="overlay">
+                  <h3>AREQUIPA</h3>
+                  <a href="#" class="explore-btn">Explore más</a>
+              </div>
+          </div>
+          <div class="city-card puno" style="background-image: url('img/obras-de-construccion-corporacion-.webp')">
+              <div class="overlay">
+                  <h3>PUNO</h3>
+                  <a href="#" class="explore-btn">Ver más</a>
+              </div>
+          </div>
+          <div class="city-card loreto" style="background-image: url('img/obras-de-construccion-corporacion-.webp')">
+              <div class="overlay">
+                  <h3>LORETO</h3>
+                  <a href="#" class="explore-btn">Explore más</a>
+              </div>
+          </div>
+          <div class="city-card cusco" style="background-image: url('img/obras-de-construccion-corporacion-.webp')">
+              <div class="overlay">
+                  <h3>CUSCO</h3>
+                  <a href="#" class="explore-btn">Explore</a>
+              </div>
+          </div>
+          <div class="city-card chiclayo" style="background-image: url('img/obras-de-construccion-corporacion-.webp')">
+              <div class="overlay">
+                  <h3>CHICLAYO</h3>
+                  <a href="#" class="explore-btn">Ver más</a>
+              </div>
+          </div>
+          <div class="city-card ica" style="background-image: url('img/obras-de-construccion-corporacion-.webp')">
+              <div class="overlay">
+                  <h3>ICA</h3>
+                  <a href="#" class="explore-btn">Explore más</a>
+              </div>
+          </div>
+          <div class="city-card ayacucho" style="background-image: url('img/obras-de-construccion-corporacion-.webp')">
+              <div class="overlay">
+                  <h3>AYACUCHO</h3>
+                  <a href="#" class="explore-btn">Ver más</a>
+              </div>
+          </div>
+      </div>
+  </section>

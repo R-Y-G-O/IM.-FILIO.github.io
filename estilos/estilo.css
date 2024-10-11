@@ -582,7 +582,10 @@ a {
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 3; 
+    -moz-line-clamp: 3;    
+    -ms-line-clamp: 3;     
+    line-clamp: 3;         
 }
 
 #cardLink {
@@ -807,7 +810,7 @@ a {
 }
 
 /* Estilos de la superposición */
-.overlay {
+.overlay_city {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -820,7 +823,7 @@ a {
     height: 75px;
 }
 
-.city-card:hover .overlay {
+.city-card:hover .overlay_city {
     background: rgba(0, 0, 0, 0.7);
 }
 
@@ -857,8 +860,8 @@ h3 {
         grid-template-columns: repeat(2, 1fr);
         height: 1600px;
     }
-
 }
+
 
 
 .formulario {
