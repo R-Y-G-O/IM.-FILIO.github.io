@@ -182,13 +182,6 @@ function cerrarFormulario() {
     document.getElementById('overlay').style.display = 'none'; 
     document.getElementById('formulario-contacto').style.display = 'none'; 
 }
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    alert("Formulario enviado para la propiedad: " + document.getElementById('titulo-propiedad').value);
-    
-    cerrarFormulario();
-});
 
 
 

@@ -1,5 +1,4 @@
-﻿<!--
-Copyright (c) 2024 by Juan (https://codepen.io/juan-frontdev/pen/MWYeQqp) and gharsh11032000 (Harsh Gupta)
+﻿<!--Copyright (c) 2024 by Juan (https://codepen.io/juan-frontdev/pen/MWYeQqp) and gharsh11032000 (Harsh Gupta)
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
@@ -475,21 +474,22 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         let totalTarjetasVisibles = 0; 
 
         function getMargenTarjeta() {
-        if (window.innerWidth >= 769) {
-            return 20; 
-        } else if (window.innerWidth >= 768) {
-            return 0; 
-        } else {
-            return -14;
-        }
+    if (window.innerWidth >= 768) {
+        return 20; // Para pantallas iguales o mayores a 768 píxeles
+    } else if  (window.innerWidth >= 322 && window.innerWidth <= 767) {
+        return -59;     
+    } else{
+        return -102; 
     }
+}
+
         // Función para obtener el número de tarjetas por desplazamiento
         function getNumTarjetasPorDesplazamiento() {
-            if (window.innerWidth >= 769) {
+            if (window.innerWidth >= 1024) {
                 return 4; 
-            } else if (window.innerWidth >= 768) {
+            } else if (window.innerWidth >= 450 && window.innerWidth <= 1023) {
                 return 2; 
-            } else {
+            }  else{
                 return 1; 
             }
         }
@@ -530,6 +530,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             }
             contenedor.style.transform = `translateX(${desplazamiento}px)`;
         });
+
         const precioInput = document.getElementById('precio');
         const ubicacionSelect = document.getElementById('ubicacion');
         const tipoPropiedadSelect = document.getElementById('tipo-propiedad');
@@ -674,32 +675,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
-
 </script>
 
-<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script type="text/javascript">
-    (function() {
-        emailjs.init("Y28WmP_fwZjZfdkmX"); 
-    })();
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-event.preventDefault();
-document.getElementById("overlay").style.display = "block";
-const serviceID = 'service_syq9sgg'; 
-const templateID = 'template_xr0hn9b';
-emailjs.sendForm(serviceID, templateID, this)
-    .then(() => {
-        alert("Formulario enviado para la propiedad: " + document.getElementById('titulo-propiedad').value);
-        cerrarFormulario();
-    }, (err) => {
-        alert(JSON.stringify(err));
-        console.log('Failed to send email. Error:', err);
-    })
-    .finally(() => {
-        document.getElementById("overlay").style.display = "none";
-    });
-});
-</script>
 
 
 
