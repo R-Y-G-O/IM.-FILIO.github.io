@@ -1,171 +1,158 @@
-<style>
-    .cities-highlighted {
-    text-align: center;
-    padding: 40px;
-}
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propiedades en Venta - FILIO</title>
+    <style>
+        body {
+            font-family: 'Copperplate Gothic Bold', sans-serif; /* Tipografía solicitada */
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            color: #2e8b57;
+            margin-bottom: 40px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            animation: fadeInUp 1s ease-in-out;
+        }
+        .property-card {
+            width: 300px;
+            margin: 15px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .property-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .property-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .property-card:hover img {
+            transform: scale(1.05);
+        }
+        .property-info {
+            padding: 15px;
+        }
+        .property-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .property-description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .property-price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #2e8b57;
+        }
+        /* Triángulo en la esquina */
+        .ribbon {
+            width: 0px;
+            height: 0;
+            border-style: solid;
+            border-width: 0 90px 90px 0;
+            border-color: transparent #e74c3c transparent transparent;
+            position: absolute;
+            top: 110px;
+            right: 0;
+            transform: rotate(90deg);
+        }
+        .ribbon-text {
+            position: absolute;
+            top: 20px;
+            right: -125px;
+            width: 120px;
+            text-align: center;
+            transform: rotate(270deg);
+            color: white;
+            font-size: 12px;
+        }
+        /* Animaciones */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
 
-/* Diseño del grid ajustado */
-.cities-grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-auto-rows: 140px; 
-    gap: 0; 
-    width: 100%; 
-    height: 500px; 
-}
+    <h1>Propiedades en Venta</h1>
+    
+    <div class="container">
+        <!-- Primera Propiedad -->
+        <div class="property-card">
+            <img src="https://via.placeholder.com/300x200" alt="Propiedad 1">
+            <div class="property-info">
+                <div class="property-title">Casa en la Playa</div>
+                <div class="property-description">Una hermosa casa con vista al mar, ideal para el verano.</div>
+                <div class="property-price">$350,000</div>
+            </div>
+            <div class="ribbon">
+                <span class="ribbon-text">Nuevo</span>
+            </div>
+        </div>
 
-/* Estilos de las tarjetas */
-.city-card {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    overflow: hidden;
-    transition: transform 0.3s ease-in-out;
-    border: 2px solid var(--highlight-green); 
-}
+        <!-- Segunda Propiedad -->
+        <div class="property-card">
+            <img src="https://via.placeholder.com/300x200" alt="Propiedad 2">
+            <div class="property-info">
+                <div class="property-title">Apartamento en la Ciudad</div>
+                <div class="property-description">Un moderno apartamento en el centro de la ciudad.</div>
+                <div class="property-price">$280,000</div>
+            </div>
+            <div class="ribbon">
+                <span class="ribbon-text">Oferta</span>
+            </div>
+        </div>
 
-.city-card:hover {
-    transform: scale(1.05);
-}
+        <!-- Tercera Propiedad -->
+        <div class="property-card">
+            <img src="https://via.placeholder.com/300x200" alt="Propiedad 3">
+            <div class="property-info">
+                <div class="property-title">Casa Familiar en los Suburbios</div>
+                <div class="property-description">Perfecta para una familia, con amplio jardín y garaje.</div>
+                <div class="property-price">$450,000</div>
+            </div>
+            <div class="ribbon">
+                <span class="ribbon-text">Vendido</span>
+            </div>
+        </div>
+    </div>
 
-/* Formas irregulares en el grid */
-.city-card.lima {
-    margin-left: 50px;
-    grid-column: span 4;
-    grid-row: span 3;
-}
-
-.city-card.arequipa {
-    grid-column: span 3;
-    grid-row: span 2;
-}
-
-.city-card.puno {
-    grid-column: span 2;
-    grid-row: span 2;
-}
-
-.city-card.loreto {
-    margin-right: 50px;
-    grid-column: span 3;
-    grid-row: span 1;
-}
-
-.city-card.cusco {
-    grid-column: span 1;
-    grid-row: span 2;
-}
-
-.city-card.chiclayo {
-    margin-right: 50px;
-    grid-column: span 2;
-    grid-row: span 2;
-}
-
-.city-card.ica {
-    grid-column: span 2;
-    grid-row: span 1;
-}
-
-.city-card.ayacucho {
-    grid-column: span 3;
-    grid-row: span 1;
-}
-
-/* Estilos de la superposición */
-.overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 15px;
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    text-align: left;
-    transition: background 0.3s ease;
-    height: 75px;
-}
-
-.city-card:hover .overlay {
-    background: rgba(0, 0, 0, 0.7);
-}
-
-h3 {
-    margin-bottom: 10px;
-    margin-top: -10px;
-    font-size: 20px;
-}
-
-.explore-btn {
-    color: #fff;
-    text-decoration: none;
-    background-color: var(--primary-green);
-    padding: 8px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.explore-btn:hover {
-    background-color: var(--highlight-green);
-}
-
-</style>
-<section id="proyectos">
-    <h1 class="title">
-        <i class="fa-solid fa-drafting-compass" id="icon"></i>ENCUENTRA TU INMUEBLE
-        <i class="fa-solid fa-drafting-compass" id="icon_gi"></i>
-    </h1>
-    <p class="text">
-      Busca y encuentra miles de propiedades en todas las ciudades. Estás a un paso de encontrar tu inmueble; en la ciudad donde anhelas vivir. No esperes más, encuéntralo aquí.
-    </p>
-      <div class="cities-grid">
-          <div class="city-card lima" style="background-image: url('img/obras-de-construccion-corporacion-.webp')">
-              <div class="overlay">
-                  <h3>LIMA</h3>
-                  <a href="#" class="explore-btn">Explore</a>
-              </div>
-          </div>
-          <div class="city-card arequipa" style="background-image: url('img/obras-de-construccion-corporacion-.webp')">
-              <div class="overlay">
-                  <h3>AREQUIPA</h3>
-                  <a href="#" class="explore-btn">Explore más</a>
-              </div>
-          </div>
-          <div class="city-card puno" style="background-image: url('img/obras-de-construccion-corporacion-.webp')">
-              <div class="overlay">
-                  <h3>PUNO</h3>
-                  <a href="#" class="explore-btn">Ver más</a>
-              </div>
-          </div>
-          <div class="city-card loreto" style="background-image: url('img/obras-de-construccion-corporacion-.webp')">
-              <div class="overlay">
-                  <h3>LORETO</h3>
-                  <a href="#" class="explore-btn">Explore más</a>
-              </div>
-          </div>
-          <div class="city-card cusco" style="background-image: url('img/obras-de-construccion-corporacion-.webp')">
-              <div class="overlay">
-                  <h3>CUSCO</h3>
-                  <a href="#" class="explore-btn">Explore</a>
-              </div>
-          </div>
-          <div class="city-card chiclayo" style="background-image: url('img/obras-de-construccion-corporacion-.webp')">
-              <div class="overlay">
-                  <h3>CHICLAYO</h3>
-                  <a href="#" class="explore-btn">Ver más</a>
-              </div>
-          </div>
-          <div class="city-card ica" style="background-image: url('img/obras-de-construccion-corporacion-.webp')">
-              <div class="overlay">
-                  <h3>ICA</h3>
-                  <a href="#" class="explore-btn">Explore más</a>
-              </div>
-          </div>
-          <div class="city-card ayacucho" style="background-image: url('img/obras-de-construccion-corporacion-.webp')">
-              <div class="overlay">
-                  <h3>AYACUCHO</h3>
-                  <a href="#" class="explore-btn">Ver más</a>
-              </div>
-          </div>
-      </div>
-  </section>
+</body>
+</html>

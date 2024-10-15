@@ -31,10 +31,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                 <p id="cardArea">Área: </p>
                 <p id="cardLocation">Ubicación: </p>
             </div>
-            <button id="viewOffer">Ver oferta</button>
-            <a href="#" id="cardLink">Ver más detalles</a>
+            <a href="#" id="cardLink">Ver más</a>
         </div>
     </div>
+
+
+
 
     <header>
         <div id="navbar-container"></div>
@@ -48,7 +50,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             <div class="slides">
               <article class="main-post main-post--active">
                 <div class="main-post__image">
-                  <img src="img/carrusel/carrucel_in_3.webp" alt="img_1" />
+                  <img src="img/carrusel/carrucel_in_1.webp" alt="img_1" />
                 </div>
                 <div class="main-post__content">
                   <div class="main-post__tag-wrapper">
@@ -98,7 +100,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       
               <article class="main-post main-post--not-active">
                 <div class="main-post__image">
-                  <img src="img/carrusel/carrucel_in_1.webp" alt="img 3" />
+                  <img src="img/carrusel/carrucel_in_3.webp" alt="img 3" />
                 </div>
                 <div class="main-post__content">
                   <div class="main-post__tag-wrapper">
@@ -169,21 +171,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         </div>
       </header> 
 
-    <section class="features-section-ser">
-      <h2 class="title_cer"><i class="fa-solid fa-paperclip" id="icon"></i>CERTIFICACIONES<i class="fa-solid fa-paperclip" id="icon_gi"></i></h2>
-      <div class="features-container-ser">
-          <div class="feature-item-ser">
-              <img src="img/certificaciones/1.webp" alt="">
-              <div class="feature-text">
-              </div>
-          </div>
-          <div class="feature-item-ser">
-              <img src="img/certificaciones/2.webp" alt="">
-              <div class="feature-text"> 
-              </div>
-          </div>
-      </div>
-  </section>
+
 
 
   <section class="features-section">
@@ -218,11 +206,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                 <input type="number" id="tamano" placeholder="Escribe el tamaño mínimo en m²" min="0" step="20">
             </div>
         </div>
-  
-        <!-- Carrusel de Tarjetas -->
+
         <div class="carrusel">
             <div class="tarjetas-contenedor" id="tarjetas-container">
-                <!-- Las tarjetas se generarán aquí dinámicamente -->
             </div>
             <div class="flechas">
                 <button class="flecha" id="flecha-izquierda">&#10094;</button>
@@ -232,43 +218,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         </div>
     </div>
   </section>
-
-
-  <div id="overlay" class="overlay" style="display:none;"></div>
-  <div id="formulario-contacto" class="formulario" style="display:none;">
-      <h2>SOLICITAR INFORMACION</h2>
-      <div class="info-propiedad">
-          <p><strong>Título:</strong> <span id="titulo-propiedad-info" name=""></span></p>
-          <p><strong>Descripción:</strong> <span id="descripcion-propiedad-info"></span></p>
-          <p><strong>Precio:</strong> <span id="precio-propiedad-info"></span></p>
-          <p><strong>Ubicación:</strong> <span id="ubicacion-propiedad-info"></span></p>
-          <p><strong>Tamaño:</strong> <span id="area-propiedad-info"></span>m2</p>
-      </div>
-      <form id="contactForm">
-          <input type="hidden" id="titulo-propiedad" name="titulo">
-          <input type="hidden" id="descripcion-propiedad" name="descripcion">
-          <input type="hidden" id="precio-propiedad" name="precio">
-          <input type="hidden" id="ubicacion-propiedad" name="ubicacion">
-          <input type="hidden" id="area-propiedad" name="area">
-        
-          <label for="nombre">Nombre:</label>
-          <input type="text" id="nombre" name="nombre" required>
-          
-          <label for="email">Correo Electrónico:</label>
-          <input type="email" id="email" name="email" required>
-          
-          <label for="mensaje">Mensaje:</label>
-          <textarea id="mensaje" name="mensaje" required></textarea>
-          
-          <button type="submit" class="abrir_formulario">Enviar</button>
-          <button type="button" onclick="cerrarFormulario()" class="cerrar_formulario">Cancelar</button>
-      </form>
-  </div>
-  
-
-  
-
-
 
     <section class="info-section">
               <h1 class="title_imfromacion"><i class="fa-solid fa-circle-exclamation" id="icon"></i>TESTIMONIOS DE CLIENTES<i class="fa-solid fa-circle-exclamation" id="icon_gi"></i></h1>
@@ -581,8 +530,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             }
             contenedor.style.transform = `translateX(${desplazamiento}px)`;
         });
-    
-        // Filtrar tarjetas basado en los inputs del usuario
         const precioInput = document.getElementById('precio');
         const ubicacionSelect = document.getElementById('ubicacion');
         const tipoPropiedadSelect = document.getElementById('tipo-propiedad');
@@ -593,7 +540,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             const ubicacionSeleccionada = ubicacionSelect.value;
             const tipoPropiedadSeleccionado = tipoPropiedadSelect.value;
             const tamanoMinimo = Number(tamanoInput.value);
-    
             let coincidencias = 0;
     
             document.querySelectorAll('.tarjeta').forEach(tarjeta => {
@@ -601,7 +547,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                 const ubicacionTarjeta = tarjeta.dataset.ubicacion;
                 const tipoPropiedadTarjeta = tarjeta.dataset.tipo;
                 const tamanoTarjeta = Number(tarjeta.dataset.tamano);
-    
                 const cumplePrecio = precioMaximo ? precioTarjeta <= precioMaximo : true;
                 const cumpleUbicacion = ubicacionSeleccionada ? ubicacionTarjeta === ubicacionSeleccionada : true;
                 const cumpleTipo = tipoPropiedadSeleccionado ? tipoPropiedadTarjeta === tipoPropiedadSeleccionado : true;
@@ -625,7 +570,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             }
         }
     
-        // Listeners para los filtros
         precioInput.addEventListener('input', () => {
             const value = Number(precioInput.value);
             if (value < 0) {
@@ -640,21 +584,17 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         tipoPropiedadSelect.addEventListener('change', filtrarTarjetas);
         tamanoInput.addEventListener('input', filtrarTarjetas);
     
-        // Al cargar la página, inicializar el estado del carrusel
         document.addEventListener('DOMContentLoaded', () => {
             actualizarTotalTarjetasVisibles(); 
             mostrarFlechas(); 
             filtrarTarjetas(); 
         });
     
-        // Escuchar cambios en el tamaño de la ventana
         window.addEventListener('resize', () => {
             actualizarTotalTarjetasVisibles(); 
             mostrarFlechas(); 
         });
     
-
-       // Función para contar los números
        function startCounting() {
             const counters = document.querySelectorAll('.counter');
             counters.forEach(counter => {
@@ -694,64 +634,59 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const slideCard = document.getElementById("slideCard");
-        const cardImage = document.getElementById("cardImage");
-        const cardTitle = document.getElementById("cardTitle");
-        const cardDescription = document.getElementById("cardDescription");
-        const cardPrice = document.getElementById("cardPrice");
-        const cardArea = document.getElementById("cardArea");
-        const cardLocation = document.getElementById("cardLocation");
-        const cardLink = document.getElementById("cardLink");
-        const viewOffer = document.getElementById("viewOffer");
-        const closeCard = document.getElementById("closeCard");
+document.addEventListener("DOMContentLoaded", function () {
+    const slideCard = document.getElementById("slideCard");
+    const cardImage = document.getElementById("cardImage");
+    const cardTitle = document.getElementById("cardTitle");
+    const cardDescription = document.getElementById("cardDescription");
+    const cardPrice = document.getElementById("cardPrice");
+    const cardArea = document.getElementById("cardArea");
+    const cardLocation = document.getElementById("cardLocation");
+    const cardLink = document.getElementById("cardLink");
+    const closeCard = document.getElementById("closeCard");
 
-        // Cargar una tarjeta al azar desde el archivo data.js
-        const randomIndex = Math.floor(Math.random() * propiedades.length);
-        const propiedad = propiedades[randomIndex];
+    // Selecciona una propiedad aleatoria
+    const randomIndex = Math.floor(Math.random() * propiedades.length);
+    const propiedad = propiedades[randomIndex];
 
-        cardImage.src = propiedad.imagen;
-        cardTitle.textContent = propiedad.titulo;
-        cardDescription.textContent = propiedad.descripcion;
-        cardPrice.textContent = `Precio: $${propiedad.precio}`;
-        cardArea.textContent = `Área: ${propiedad.tamano} m²`;
-        cardLocation.textContent = `Ubicación: ${propiedad.ubicacion}`;
-        cardLink.href = propiedad.link;
+    // Actualiza la tarjeta con los datos de la propiedad
+    cardImage.src = propiedad.imagen;
+    cardTitle.textContent = propiedad.titulo;
+    cardDescription.textContent = propiedad.descripcion;
+    cardPrice.textContent = `Precio: $${propiedad.precio}`;
+    cardArea.textContent = `Área: ${propiedad.area} m²`;
+    cardLocation.textContent = `Ubicación: ${propiedad.ubicacion}`;
 
-        // Animación de entrada después de un segundo
-        setTimeout(() => {
-            slideCard.classList.add("active");
-        }, 1000);
+    cardLink.href = `venta.html?id=${propiedad.id}`;
 
-        // Cerrar la tarjeta deslizante al hacer clic en el botón de cerrar
-        closeCard.addEventListener("click", function () {
-            slideCard.classList.toggle("active");
-            if (slideCard.classList.contains("active")) {
-                closeCard.innerHTML = '✕';
-                closeCard.style.color = 'red'; 
-            } else {
-                closeCard.innerHTML = '➤';
-                closeCard.style.color = 'green';
-            }
-        });
+    setTimeout(() => {
+        slideCard.classList.add("active");
+    }, 3000);
+
+    closeCard.addEventListener("click", function () {
+        slideCard.classList.toggle("active");
+        if (slideCard.classList.contains("active")) {
+            closeCard.innerHTML = '✕';
+            closeCard.style.color = 'red'; 
+        } else {
+            closeCard.innerHTML = '➤';
+            closeCard.style.color = 'green';
+        }
     });
+});
+
 </script>
+
 <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script type="text/javascript">
     (function() {
-        emailjs.init("Y28WmP_fwZjZfdkmX"); // Reemplaza "TU_USER_ID" con tu User ID de EmailJS
+        emailjs.init("Y28WmP_fwZjZfdkmX"); 
     })();
-
     document.getElementById('contactForm').addEventListener('submit', function(event) {
-event.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
-
-// Muestra el overlay mientras se envía el formulario
+event.preventDefault();
 document.getElementById("overlay").style.display = "block";
-
-// Recolecta los datos del formulario
 const serviceID = 'service_syq9sgg'; 
 const templateID = 'template_xr0hn9b';
-
 emailjs.sendForm(serviceID, templateID, this)
     .then(() => {
         alert("Formulario enviado para la propiedad: " + document.getElementById('titulo-propiedad').value);
@@ -761,12 +696,15 @@ emailjs.sendForm(serviceID, templateID, this)
         console.log('Failed to send email. Error:', err);
     })
     .finally(() => {
-        // Oculta el overlay
         document.getElementById("overlay").style.display = "none";
     });
 });
-
 </script>
+
+
+
+
+
     <script src="js/carrusel.js" defer></script>      
     <script src="js/scroll.js"></script>  
     <script src="js/navbar.js"></script>

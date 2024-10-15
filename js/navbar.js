@@ -14,10 +14,6 @@ const navbarHTML = `
             <li><a href="contacto.html">CONTÁCTANOS</a></li>
         </ul>
         <div class="navbar-right">
-            <div class="logos">
-                <img src="img/certificaciones/1_1.webp" alt="Logo Certificación 1" class="logo">
-                <img src="img/certificaciones/2_2.webp" alt="Logo Certificación 2" class="logo">
-            </div>
             <div class="social-icons">
                 <a href="https://www.facebook.com/gmnorteconstructora/"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -125,7 +121,10 @@ const pieHTML = `
     </div>
     <div class="footer-bottom">
         <div class="divider"></div>
-        <p>&copy; 2024 R.Y.G.O Todos los derechos reservados.</p>
+        <p class="marca">&copy; 2024 R.Y.G.O Todos los derechos reservados.</p>
+        <meta name="author" content="[R.Y.G.O]">
+        <meta name="copyright" content="© 2024 [R.Y.G.O]. Todos los derechos reservados.">
+
     </div>
 </div>
 

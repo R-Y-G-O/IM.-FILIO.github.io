@@ -1,5 +1,6 @@
 const propiedades = [
     {
+        id: '1',
         imagen: "img/carrusel/carrucel_in_1.webp",
         titulo: "Residencial: Casa Familiar en Ciudad Jardín",
         tipo: "residencial",
@@ -7,9 +8,10 @@ const propiedades = [
         precio: 300000,
         ubicacion: "Ciudad Jardín",
         area: 150,
-        coordenadas: { lat: -34.601, lng: -58.383 } // Ejemplo de coordenadas
+        coordenadas: { lat: -34.601, lng: -58.383 } 
     },
     {
+        id: '2',
         imagen: "img/carrusel/carrucel_in_1.webp",
         titulo: "Comercial: Oficina Moderna en Distrito Empresarial",
         tipo: "comercial",
@@ -20,6 +22,7 @@ const propiedades = [
         coordenadas: { lat: -34.603, lng: -58.385 } // Ejemplo de coordenadas
     },
     {
+        id: '3',
         imagen: "img/carrusel/carrucel_in_2.webp",
         titulo: "Residencial: Departamento en el Centro Histórico",
         tipo: "residencial",
@@ -30,6 +33,7 @@ const propiedades = [
         coordenadas: { lat: -34.604, lng: -58.386 } // Ejemplo de coordenadas
     },
     {
+        id: '4',
         imagen: "img/carrusel/carrucel_in_3.webp",
         titulo: "Comercial: Local Comercial en Avenida Principal",
         tipo: "comercial",
@@ -40,6 +44,7 @@ const propiedades = [
         coordenadas: { lat: -34.605, lng: -58.387 } // Ejemplo de coordenadas
     },
     {
+        id: '5',
         imagen: "img/carrusel/carrucel_in_1.webp",
         titulo: "Industrial: Bodega en Parque Industrial",
         tipo: "industrial",
@@ -50,6 +55,7 @@ const propiedades = [
         coordenadas: { lat: -34.606, lng: -58.388 } // Ejemplo de coordenadas
     },
     {
+        id: '6',
         imagen: "img/carrusel/carrucel_in_2.webp",
         titulo: "Residencial: Casa de Campo con Piscina",
         tipo: "residencial",
@@ -74,7 +80,6 @@ function crearTarjetas() {
         tarjeta.dataset.tipo = propiedad.tipo; 
         tarjeta.dataset.area = propiedad.area;
 
-        // Construir la URL del iframe de Google Maps con las coordenadas
         const mapaSrc = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.748678842572!2d${propiedad.coordenadas.lng}!3d${propiedad.coordenadas.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb24a5f500c17%3A0x5b02910719db8c3a!2sGoogleplex!5e0!3m2!1ses!2s!4v1635946085203!5m2!1ses!2s`;
 
         tarjeta.innerHTML = `
@@ -82,10 +87,7 @@ function crearTarjetas() {
             <div class="contenido">
                 <h3>${propiedad.titulo}</h3>
                 <p>${propiedad.descripcion}</p>
-                <button onclick="contactar('${propiedad.titulo}')">CONTACTAR</button> 
-            </div>
-            <div class="mapa">
-                <iframe src="${mapaSrc}" allowfullscreen=""></iframe>
+                <button onclick="redirigirADetalle(${propiedad.id})">Ver más...</button> 
             </div>
         `;
 
@@ -93,7 +95,13 @@ function crearTarjetas() {
     });
 }
 
+// Función para redirigir a la página de detalles con el ID de la propiedad
+function redirigirADetalle(idPropiedad) {
+    window.location.href = `venta.html?id=${idPropiedad}`;
+}
+
 crearTarjetas();
+
 
 
 function aplicarFiltros() {
@@ -134,7 +142,7 @@ function aplicarFiltros() {
                     <h3>${propiedad.titulo}</h3>
                     <p>${propiedad.descripcion}</p>
                     <p>Ubicación: ${propiedad.ubicacion}</p>
-                    <p>Precio: $${propiedad.precio}, Tamaño: ${propiedad.area}m2</p>
+                    <p>Precio: $${propiedad.precio}, Tamaño: ${propiedad.area}m²</p>
                 </div>
                 <div class="mapa">
                     <iframe src="${mapaSrc}" allowfullscreen=""></iframe>
@@ -153,7 +161,6 @@ function aplicarFiltros() {
 
 function contactar(titulo) {
     const propiedad = propiedades.find(prop => prop.titulo === titulo);
-    
     document.getElementById('titulo-propiedad-info').innerText = propiedad.titulo;
     document.getElementById('descripcion-propiedad-info').innerText = propiedad.descripcion;
     document.getElementById('precio-propiedad-info').innerText = `$${propiedad.precio}`;
@@ -171,13 +178,10 @@ function contactar(titulo) {
     document.getElementById('overlay').style.display = 'block'; 
     document.getElementById('formulario-contacto').style.display = 'block'; 
 }
-
 function cerrarFormulario() {
     document.getElementById('overlay').style.display = 'none'; 
     document.getElementById('formulario-contacto').style.display = 'none'; 
 }
-
-
 document.getElementById('contactForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -187,4 +191,40 @@ document.getElementById('contactForm').addEventListener('submit', function(event
 });
 
 
+
+
+function mostrarPropiedadFiltrada(idPropiedad) {
+    const propiedadSeleccionada = propiedades.find(propiedad => propiedad.id === idPropiedad);
+
+    if (propiedadSeleccionada) {
+        const contenedor = document.getElementById('tarjetas-container-filtrado');
+        contenedor.innerHTML = ''; 
+
+        const tarjeta = document.createElement('div');
+        tarjeta.className = 'property-card';
+
+        const mapaSrc = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.748678842572!2d${propiedadSeleccionada.coordenadas.lng}!3d${propiedadSeleccionada.coordenadas.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb24a5f500c17%3A0x5b02910719db8c3a!2sGoogleplex!5e0!3m2!1ses!2s!4v1635946085203!5m2!1ses!2s`;
+
+        tarjeta.innerHTML = `
+            <img src="${propiedadSeleccionada.imagen}" alt="${propiedadSeleccionada.titulo}">
+            <div class="property-details">
+                <h3>${propiedadSeleccionada.titulo}</h3>
+                <p>${propiedadSeleccionada.descripcion}</p>
+                <p>Ubicación: ${propiedadSeleccionada.ubicacion}</p>
+                <p>Precio: $${propiedadSeleccionada.precio}, Tamaño: ${propiedadSeleccionada.area}m²</p>
+            </div>
+            <div class="mapa">
+                <iframe src="${mapaSrc}" allowfullscreen=""></iframe>
+            </div>
+            <div class="property-actions">
+                <button onclick="contactar('${propiedadSeleccionada.titulo}')"><i class="fas fa-envelope"></i> Contactar</button>
+                <button onclick="llamar('${propiedadSeleccionada.titulo}')"><i class="fas fa-phone-alt"></i> Llamar</button>
+            </div>
+        `;
+        contenedor.appendChild(tarjeta);
+    } else {
+        const contenedor = document.getElementById('tarjetas-container-filtrado');
+        contenedor.innerHTML = '<p>No se encontró la propiedad seleccionada.</p>';
+    }
+}
 

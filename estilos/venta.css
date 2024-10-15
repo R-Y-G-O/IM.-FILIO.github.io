@@ -39,7 +39,7 @@ body {
             padding: 10px 15px;
             border-radius: 8px;
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 18px;
             transition: background-color 0.3s, transform 0.2s;
             display: flex;
             align-items: center;
@@ -86,7 +86,7 @@ body {
         .properties h2 {
             margin-top: 0px;
             margin-bottom: 10px;
-            color: var(--text-dark);
+            font-size: 34px;
         }
 
         .property-card {
@@ -119,13 +119,13 @@ body {
         .property-details h3 {
             color: var(--dark-grey);
             margin-bottom: 5px;
-            font-size: 1.5rem;
+            font-size: 22px;
         }
 
         .property-details p {
             margin-bottom: 10px;
             color: var(--text-grey);
-            font-size: 0.9rem;
+            font-size: 18px;
         }
 
         .property-actions {
