@@ -1,158 +1,96 @@
-<!DOCTYPE html> 
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Propiedades en Venta - FILIO</title>
-    <style>
-        body {
-            font-family: 'Copperplate Gothic Bold', sans-serif; /* Tipografía solicitada */
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-            font-size: 36px;
-            color: #2e8b57;
-            margin-bottom: 40px;
-            animation: fadeIn 1s ease-in-out;
-        }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            animation: fadeInUp 1s ease-in-out;
-        }
-        .property-card {
-            width: 300px;
-            margin: 15px;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            overflow: hidden;
-            position: relative;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .property-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-        .property-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-        .property-card:hover img {
-            transform: scale(1.05);
-        }
-        .property-info {
-            padding: 15px;
-        }
-        .property-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #333;
-        }
-        .property-description {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 10px;
-        }
-        .property-price {
-            font-size: 16px;
-            font-weight: bold;
-            color: #2e8b57;
-        }
-        /* Triángulo en la esquina */
-        .ribbon {
-            width: 0px;
-            height: 0;
-            border-style: solid;
-            border-width: 0 90px 90px 0;
-            border-color: transparent #e74c3c transparent transparent;
-            position: absolute;
-            top: 110px;
-            right: 0;
-            transform: rotate(90deg);
-        }
-        .ribbon-text {
-            position: absolute;
-            top: 20px;
-            right: -125px;
-            width: 120px;
-            text-align: center;
-            transform: rotate(270deg);
-            color: white;
-            font-size: 12px;
-        }
-        /* Animaciones */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <h1>Propiedades en Venta</h1>
-    
+<section id="blog-y-noticias">
     <div class="container">
-        <!-- Primera Propiedad -->
-        <div class="property-card">
-            <img src="https://via.placeholder.com/300x200" alt="Propiedad 1">
-            <div class="property-info">
-                <div class="property-title">Casa en la Playa</div>
-                <div class="property-description">Una hermosa casa con vista al mar, ideal para el verano.</div>
-                <div class="property-price">$350,000</div>
+        <h2 style="text-align: center; font-family: 'Copperplate Gothic Bold'; margin-bottom: 30px; color: #343a40;">Blog y Noticias</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="blog-card">
+                    <div class="blog-icon" style="font-size: 40px; color: #28a745;">📰</div>
+                    <h3 style="color: #28a745;">Tendencias del Mercado Inmobiliario</h3>
+                    <p>Descubre las últimas tendencias en el mercado inmobiliario y cómo pueden afectar tu próxima compra o venta.</p>
+                    <a href="#" class="btn btn-primary">Leer Más</a>
+                </div>
             </div>
-            <div class="ribbon">
-                <span class="ribbon-text">Nuevo</span>
+            <div class="col-md-4">
+                <div class="blog-card">
+                    <div class="blog-icon" style="font-size: 40px; color: #dc3545;">🏡</div>
+                    <h3 style="color: #dc3545;">Consejos para Comprar tu Primera Casa</h3>
+                    <p>Todo lo que necesitas saber para dar el gran paso hacia la compra de tu primera vivienda.</p>
+                    <a href="#" class="btn btn-primary">Leer Más</a>
+                </div>
             </div>
-        </div>
-
-        <!-- Segunda Propiedad -->
-        <div class="property-card">
-            <img src="https://via.placeholder.com/300x200" alt="Propiedad 2">
-            <div class="property-info">
-                <div class="property-title">Apartamento en la Ciudad</div>
-                <div class="property-description">Un moderno apartamento en el centro de la ciudad.</div>
-                <div class="property-price">$280,000</div>
-            </div>
-            <div class="ribbon">
-                <span class="ribbon-text">Oferta</span>
-            </div>
-        </div>
-
-        <!-- Tercera Propiedad -->
-        <div class="property-card">
-            <img src="https://via.placeholder.com/300x200" alt="Propiedad 3">
-            <div class="property-info">
-                <div class="property-title">Casa Familiar en los Suburbios</div>
-                <div class="property-description">Perfecta para una familia, con amplio jardín y garaje.</div>
-                <div class="property-price">$450,000</div>
-            </div>
-            <div class="ribbon">
-                <span class="ribbon-text">Vendido</span>
+            <div class="col-md-4">
+                <div class="blog-card">
+                    <div class="blog-icon" style="font-size: 40px; color: #007bff;">📈</div>
+                    <h3 style="color: #007bff;">Invertir en Bienes Raíces: Lo Que Debes Saber</h3>
+                    <p>Un análisis completo sobre cómo y por qué invertir en bienes raíces puede ser una excelente opción.</p>
+                    <a href="#" class="btn btn-primary">Leer Más</a>
+                </div>
             </div>
         </div>
     </div>
+</section>
 
-</body>
-</html>
+
+
+<style>
+    #blog-y-noticias {
+    padding: 40px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+.blog-card {
+    border: none;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.3s;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+.blog-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    z-index: 0;
+    transition: opacity 0.3s;
+    opacity: 0;
+}
+
+.blog-card:hover::after {
+    opacity: 1;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.blog-icon {
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+</style>

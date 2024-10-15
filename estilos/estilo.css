@@ -1067,3 +1067,61 @@ h3 {
 
 
 
+
+.container_servicios {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    gap: 20px;
+    width: 80%;
+    margin-left: 120px;
+}
+
+/* Nueva sección de Servicios */
+.service {
+    text-align: center;
+    width: calc(25% - 20px);
+    background-color: rgb(249, 249, 249); /* Fondo blanco para los servicios */
+    border: 1px solid #ddd; /* Borde sutil */
+    border-radius: 8px; /* Bordes redondeados para los servicios */
+    padding: 20px; /* Espacio interno para cada servicio */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transiciones para escala y sombra */
+}
+
+.service:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra más intensa al pasar el mouse */
+}
+
+.service i {
+    font-size: 50px; /* Tamaño de ícono más grande */
+    color: var(--primary-green);
+    margin-bottom: 15px;
+}
+
+.service h3 {
+    font-size: 1.5em; /* Aumenta el tamaño del título */
+    color: #333; /* Color más oscuro para el texto */
+    margin: 10px 0; /* Margen superior e inferior */
+}
+
+.service p {
+    color: #666; /* Color gris para el texto */
+    line-height: 1.5; /* Mejorar la legibilidad */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .service {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .service {
+        width: 100%;
+    }
+}
+
+

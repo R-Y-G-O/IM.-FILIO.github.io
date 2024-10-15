@@ -167,3 +167,59 @@ body {
             font-size: 24px; 
             font-weight: bold;
         }
+
+
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 10px;
+        margin-top: 100px;
+    }
+
+    .sidebar {
+        width: 100%;
+        max-height: none;
+        margin-bottom: 20px;
+    }
+
+    .properties {
+        margin-left: 0;
+    }
+
+    .property-card {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .property-card img {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .property-details h3 {
+        font-size: 20px;
+    }
+
+    .property-details p {
+        font-size: 16px;
+    }
+
+    .property-actions {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .property-actions button {
+        width: 100%;
+        margin: 0;
+    }
+
+    .mapa iframe {
+        width: 100%;
+        height: 200px;
+    }
+}
