@@ -435,21 +435,30 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         const flechaDerecha = document.getElementById('flecha-derecha');
         const mensajeNoCoincidencias = document.getElementById('mensaje-no-coincidencias');
         let desplazamiento = 0;
-        const anchoTarjeta = 277; 
+        const anchoTarjeta = getAnchoTarjeta(); 
         let margenTarjeta = getMargenTarjeta();
         let totalTarjetasVisibles = 0; 
 
         function getMargenTarjeta() {
-    if (window.innerWidth >= 768) {
-        return 20; // Para pantallas iguales o mayores a 768 píxeles
-    } else if  (window.innerWidth >= 322 && window.innerWidth <= 767) {
-        return -59;     
-    } else{
-        return -102; 
-    }
-}
+        if (window.innerWidth >= 768) {
+                return 20; 
+            } else if  (window.innerWidth >= 322 && window.innerWidth <= 767) {
+                return -59;     
+            } else{
+                return -102; 
+            }
+        }
 
-        // Función para obtener el número de tarjetas por desplazamiento
+        function getAnchoTarjeta() {
+            if (window.innerWidth >= 1024) {
+                return 268; 
+            } else if (window.innerWidth >= 450 && window.innerWidth <= 1023) {
+                return 268; 
+            }  else{
+                return 237; 
+            }
+        }
+
         function getNumTarjetasPorDesplazamiento() {
             if (window.innerWidth >= 1024) {
                 return 4; 
