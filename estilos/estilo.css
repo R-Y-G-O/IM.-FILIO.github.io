@@ -86,6 +86,7 @@ a {
     height: auto;
     border-radius: 8px;
     transition: transform 0.3s ease;
+    border: solid 2px var(--highlight-green);
 }
 
 .card-content img:hover {
