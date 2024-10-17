@@ -146,6 +146,31 @@ function aplicarFiltros() {
         mensajeError.className = 'mensaje-error';
         mensajeError.textContent = 'No se encontraron propiedades con esos criterios.';
         contenedor.appendChild(mensajeError);
+
+        // Crear botón para resetear filtros
+        const botonResetear = document.createElement('button');
+        botonResetear.textContent = 'Resetear Filtro';
+        botonResetear.className = 'button_reset_2';
+        botonResetear.style = `
+            margin-top: 10px;
+            background-color: #d00a0a; 
+            border-radius: 5px; 
+            width: 150px; 
+            height: 40px; 
+            color: white; 
+            font-weight: bold; 
+            border: none; 
+            cursor: pointer; 
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        `;
+
+        // Agregar evento para resetear filtros
+        botonResetear.addEventListener('click', () => {
+            resetearFiltros_2();
+        });
+
+        contenedor.appendChild(botonResetear);
     } else {
         propiedadesFiltradas.forEach(propiedad => {
             const tarjeta = document.createElement('div');
@@ -173,6 +198,19 @@ function aplicarFiltros() {
         });
     }
 }
+
+// Función para resetear los filtros
+function resetearFiltros_2() {
+    document.querySelectorAll('.filtro-distrito:checked').forEach(input => input.checked = false);
+    document.querySelectorAll('.filtro-ciudad:checked').forEach(input => input.checked = false);
+    document.querySelectorAll('.filtro-tipo:checked').forEach(input => input.checked = false);
+    document.getElementById('precio-min').value = '';
+    document.getElementById('precio-max').value = '';
+    document.getElementById('superficie-min').value = '';
+    document.getElementById('superficie-max').value = '';
+    aplicarFiltros();
+}
+
 
 
 

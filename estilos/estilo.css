@@ -475,7 +475,6 @@ a {
 }
 
 
-
 .carrusel {
     display: flex;
     overflow: hidden;
@@ -601,6 +600,18 @@ a {
     font-weight: bold;
 }
 
+.button_reset{
+    display: none;
+    padding: 10px;
+    margin: 20px 0; 
+    background-color: #ff0015; 
+    color: #fffefe; 
+    border: 1px solid #f5c6cb; 
+    border-radius: 5px; 
+    text-align: center;
+    font-size: 18px; 
+    font-weight: bold;
+}
 
 
 

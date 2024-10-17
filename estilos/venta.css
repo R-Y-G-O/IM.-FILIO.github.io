@@ -77,7 +77,7 @@ nav a {
 }
 
 .filter-section input[type="text"] {
-    width: calc(100% - 10px);/* Ajustar el ancho para evitar que sobresalga */
+    width: calc(100% - 10px);
     padding: 5px;
     margin-bottom: 10px;
 }
