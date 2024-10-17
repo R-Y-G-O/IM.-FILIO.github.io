@@ -452,7 +452,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 </script>
 
 
-
     <script>
         const contenedor = document.getElementById('tarjetas-container');
         const flechaIzquierda = document.getElementById('flecha-izquierda');
@@ -603,10 +602,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         ciudadSelect.addEventListener('change', filtrarTarjetas); 
         ubicacionSelect.addEventListener('change', filtrarTarjetas);
         tipoPropiedadSelect.addEventListener('change', filtrarTarjetas);
-        tamanoInput.addEventListener('input', () => {
-            const value = Number(tamanoInput.value);
+        areaInput.addEventListener('input', () => {
+            const value = Number(areaInput.value);
             if (value < 0) {
-                tamanoInput.value = 0;
+                areaInput.value = 0;
             }
             filtrarTarjetas();
         });
