@@ -6,6 +6,7 @@ const propiedades = [
         tipo: "residencial",
         descripcion: "Amplia casa de 3 habitaciones con jardín privado, cerca de parques y centros comerciales. Ideal para familias.",
         precio: 300000,
+        ciudad: "Barranco",
         ubicacion: "Ciudad Jardín",
         area: 150,
         coordenadas: { lat: -34.601, lng: -58.383 } 
@@ -17,9 +18,10 @@ const propiedades = [
         tipo: "comercial",
         descripcion: "Oficina totalmente equipada en edificio corporativo. Espacio ideal para empresas en crecimiento.",
         precio: 30000,
+        ciudad: "Miraflores",
         ubicacion: "Distrito Empresarial",
         area: 100,
-        coordenadas: { lat: -34.603, lng: -58.385 } // Ejemplo de coordenadas
+        coordenadas: { lat: -34.603, lng: -58.385 } 
     },
     {
         id: '3',
@@ -28,9 +30,10 @@ const propiedades = [
         tipo: "residencial",
         descripcion: "Lujoso departamento de 2 habitaciones con vista panorámica y acceso a todos los servicios.",
         precio: 250000,
+        ciudad: "Surco",
         ubicacion: "Centro Histórico",
         area: 90,
-        coordenadas: { lat: -34.604, lng: -58.386 } // Ejemplo de coordenadas
+        coordenadas: { lat: -34.604, lng: -58.386 } 
     },
     {
         id: '4',
@@ -39,9 +42,10 @@ const propiedades = [
         tipo: "comercial",
         descripcion: "Local ideal para retail, en una ubicación estratégica con gran afluencia de clientes.",
         precio: 120000,
+        ciudad: "Miraflores",
         ubicacion: "Avenida Principal",
         area: 80,
-        coordenadas: { lat: -34.605, lng: -58.387 } // Ejemplo de coordenadas
+        coordenadas: { lat: -34.605, lng: -58.387 } 
     },
     {
         id: '5',
@@ -50,24 +54,28 @@ const propiedades = [
         tipo: "industrial",
         descripcion: "Amplia bodega con fácil acceso a carreteras y equipada con sistemas de seguridad.",
         precio: 50000,
+        ciudad: "San Isidro",
         ubicacion: "Parque Industrial",
         area: 300,
-        coordenadas: { lat: -34.606, lng: -58.388 } // Ejemplo de coordenadas
+        coordenadas: { lat: -34.606, lng: -58.388 } 
     },
     {
         id: '6',
         imagen: "img/carrusel/carrucel_in_2.webp",
         titulo: "Residencial: Casa de Campo con Piscina",
-        tipo: "residencial",
+        tipo: "La Molina",
         descripcion: "Hermosa casa de campo de 4 habitaciones con piscina privada, ideal para escapadas de fin de semana.",
         precio: 400000,
         ubicacion: "Campo Verde",
+        ciudad: "San Isidro",
         area: 200,
-        coordenadas: { lat: -34.607, lng: -58.389 } // Ejemplo de coordenadas
-    }
+        coordenadas: { lat: -34.607, lng: -58.389 }
+    },
 ];
 
-// Función para crear las tarjetas
+
+
+// Función para crear las tarjetas INDEX
 function crearTarjetas() {
     const contenedor = document.getElementById('tarjetas-container');
     contenedor.innerHTML = ''; 
@@ -76,6 +84,7 @@ function crearTarjetas() {
         const tarjeta = document.createElement('div');
         tarjeta.className = 'tarjeta';
         tarjeta.dataset.precio = propiedad.precio;
+        tarjeta.dataset.ciudad = propiedad.ciudad;
         tarjeta.dataset.ubicacion = propiedad.ubicacion;
         tarjeta.dataset.tipo = propiedad.tipo; 
         tarjeta.dataset.area = propiedad.area;
@@ -86,6 +95,7 @@ function crearTarjetas() {
             <img src="${propiedad.imagen}" alt="${propiedad.titulo}">
             <div class="contenido">
                 <h3>${propiedad.titulo}</h3>
+                <p>LIMA: ${propiedad.ciudad}, ${propiedad.ubicacion}</p>
                 <p>${propiedad.descripcion}</p>
                 <button onclick="redirigirADetalle(${propiedad.id})">Ver más...</button> 
             </div>
@@ -105,7 +115,9 @@ crearTarjetas();
 
 
 function aplicarFiltros() {
+    // Obtener valores seleccionados
     const distritosSeleccionados = Array.from(document.querySelectorAll('.filtro-distrito:checked')).map(input => input.value);
+    const ciudadesSeleccionadas = Array.from(document.querySelectorAll('.filtro-ciudad:checked')).map(input => input.value);
     const tiposSeleccionados = Array.from(document.querySelectorAll('.filtro-tipo:checked')).map(input => input.value);
     const precioMin = parseFloat(document.getElementById('precio-min').value) || 0;
     const precioMax = parseFloat(document.getElementById('precio-max').value) || Infinity;
@@ -115,10 +127,15 @@ function aplicarFiltros() {
     const propiedadesFiltradas = propiedades.filter(propiedad => {
         const precioValido = propiedad.precio >= precioMin && propiedad.precio <= precioMax;
         const superficieValida = propiedad.area >= superficieMin && propiedad.area <= superficieMax;
+
+        // Validar ciudad y distrito
+        const ciudadValida = ciudadesSeleccionadas.length === 0 || ciudadesSeleccionadas.includes(propiedad.ciudad);
         const distritoValido = distritosSeleccionados.length === 0 || distritosSeleccionados.includes(propiedad.ubicacion);
+
+        // Validar tipo
         const tipoValido = tiposSeleccionados.length === 0 || tiposSeleccionados.includes(propiedad.tipo);
 
-        return precioValido && superficieValida && distritoValido && tipoValido;
+        return precioValido && superficieValida && ciudadValida && distritoValido && tipoValido;
     });
 
     const contenedor = document.getElementById('tarjetas-container-filtrado');
@@ -141,7 +158,7 @@ function aplicarFiltros() {
                 <div class="property-details">
                     <h3>${propiedad.titulo}</h3>
                     <p>${propiedad.descripcion}</p>
-                    <p>Ubicación: ${propiedad.ubicacion}</p>
+                    <p>Ubicación: ${propiedad.ciudad}, ${propiedad.ubicacion}</p>
                     <p>Precio: $${propiedad.precio}, Tamaño: ${propiedad.area}m²</p>
                 </div>
                 <div class="mapa">
@@ -164,13 +181,15 @@ function contactar(titulo) {
     document.getElementById('titulo-propiedad-info').innerText = propiedad.titulo;
     document.getElementById('descripcion-propiedad-info').innerText = propiedad.descripcion;
     document.getElementById('precio-propiedad-info').innerText = `$${propiedad.precio}`;
+    document.getElementById('ciudad-propiedad-info').innerText = propiedad.ciudad;
     document.getElementById('ubicacion-propiedad-info').innerText = propiedad.ubicacion;
     document.getElementById('area-propiedad-info').innerText = propiedad.area;
 
-      // Asignar valores a los campos ocultos del formulario
+      // Asignar valores a los campos ocultos del formulario emailJS
       document.getElementById('titulo-propiedad').value = propiedad.titulo; 
       document.getElementById('descripcion-propiedad').value = propiedad.descripcion;
       document.getElementById('precio-propiedad').value = propiedad.precio;
+      document.getElementById('ciudad-propiedad-info').innerText = propiedad.ciudad;
       document.getElementById('ubicacion-propiedad').value = propiedad.ubicacion;
       document.getElementById('area-propiedad').value = propiedad.area;
 
@@ -186,7 +205,7 @@ function cerrarFormulario() {
 
 
 
-function mostrarPropiedadFiltrada(idPropiedad) {
+function mostrarPropiedadFiltrada_Index(idPropiedad) {
     const propiedadSeleccionada = propiedades.find(propiedad => propiedad.id === idPropiedad);
 
     if (propiedadSeleccionada) {
@@ -203,7 +222,7 @@ function mostrarPropiedadFiltrada(idPropiedad) {
             <div class="property-details">
                 <h3>${propiedadSeleccionada.titulo}</h3>
                 <p>${propiedadSeleccionada.descripcion}</p>
-                <p>Ubicación: ${propiedadSeleccionada.ubicacion}</p>
+                <p>Ubicación: ${propiedadSeleccionada.ciudad},${propiedadSeleccionada.ubicacion}</p>
                 <p>Precio: $${propiedadSeleccionada.precio}, Tamaño: ${propiedadSeleccionada.area}m²</p>
             </div>
             <div class="mapa">

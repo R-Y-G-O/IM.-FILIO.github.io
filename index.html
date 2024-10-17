@@ -176,12 +176,22 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   <section class="features-section">
     <div class="contenedor">
         <div class="filtros-busqueda">
+
+            <div class="filtro">
+                <label for="ciudad"><i class="fa-solid fa-map"></i> Ciudad</label>
+                <select id="ciudad">
+                    <option value="">Cualquiera</option>
+                    <option value="San Isidro">San Isidro</option>
+                    <option value="Surco">Surco</option>
+                </select>
+            </div>
+            
             <div class="filtro">
                 <label for="ubicacion"><i class="fas fa-map-marker-alt"></i> Ubicación</label>
                 <select id="ubicacion">
                     <option value="">Cualquiera</option>
-                    <option value="ciudad1">Ciudad 1</option>
-                    <option value="ciudad2">Ciudad 2</option>
+                    <option value="Ciudad Jardín">Ciudad Jardín</option>
+                    <option value="Avenida Principal">Avenida Principal</option>
                 </select>
             </div>
   
@@ -196,13 +206,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             </div>
   
             <div class="filtro">
-                <label for="precio"><i class="fas fa-tag"></i> Precio Máximo en soles S/</label>
-                <input type="number" id="precio" placeholder="Escribe el precio máximo" min="0" step="1000">
+                <label for="precio"><i class="fas fa-tag"></i> Precio MAX S/</label>
+                <input type="number" id="precio" placeholder="Escribe el precio" min="0" step="100" value="">
             </div>
+            
   
             <div class="filtro">
-                <label for="tamano"><i class="fas fa-arrows-alt"></i> Tamaño (m²)</label>
-                <input type="number" id="tamano" placeholder="Escribe el tamaño mínimo en m²" min="0" step="20">
+                <label for="area"><i class="fas fa-arrows-alt"></i> Tamaño MIN(m²)</label>
+                <input type="number" id="area" placeholder="Escribe el tamaño m²" min="0" step="20">
             </div>
         </div>
 
@@ -308,43 +319,43 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         <div class="city-card lima" style="background-image: url('img/obras-de-construccion-corporacion-.webp')">
             <div class="overlay_city">
                 <h3>LIMA</h3>
-                <a href="#" class="explore-btn">Explore</a>
+                <a href="#" class="explore-btn">Ver propiedades</a>
             </div>
         </div>
         <div class="city-card arequipa" style="background-image: url('img/obras-de-construccion-corporacion-.webp')">
             <div class="overlay_city">
                 <h3>AREQUIPA</h3>
-                <a href="#" class="explore-btn">Explore más</a>
+                <a href="#" class="explore-btn">Ver propiedades</a>
             </div>
         </div>
         <div class="city-card puno" style="background-image: url('img/obras-de-construccion-corporacion-.webp')">
             <div class="overlay_city">
                 <h3>PUNO</h3>
-                <a href="#" class="explore-btn">Ver más</a>
+                <a href="#" class="explore-btn">Ver propiedades</a>
             </div>
         </div>
         <div class="city-card loreto" style="background-image: url('img/obras-de-construccion-corporacion-.webp')">
             <div class="overlay_city">
                 <h3>LORETO</h3>
-                <a href="#" class="explore-btn">Explore más</a>
+                <a href="#" class="explore-btn">Ver propiedades</a>
             </div>
         </div>
         <div class="city-card cusco" style="background-image: url('img/obras-de-construccion-corporacion-.webp')">
             <div class="overlay_city">
                 <h3>CUSCO</h3>
-                <a href="#" class="explore-btn">Explore</a>
+                <a href="#" class="explore-btn">Ver propiedades</a>
             </div>
         </div>
         <div class="city-card chiclayo" style="background-image: url('img/obras-de-construccion-corporacion-.webp')">
             <div class="overlay_city">
                 <h3>CHICLAYO</h3>
-                <a href="#" class="explore-btn">Ver más</a>
+                <a href="#" class="explore-btn">Ver propiedades</a>
             </div>
         </div>
         <div class="city-card ica" style="background-image: url('img/obras-de-construccion-corporacion-.webp')">
             <div class="overlay_city">
                 <h3>ICA</h3>
-                <a href="#" class="explore-btn">Explore más</a>
+                <a href="#" class="explore-btn">Ver propiedades</a>
             </div>
         </div>
         <div class="city-card ayacucho" style="background-image: url('img/obras-de-construccion-corporacion-.webp')">
@@ -428,7 +439,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       <div id="pie-container"></div>
     </footer>
 
-
     <script>
         const contenedor = document.getElementById('tarjetas-container');
         const flechaIzquierda = document.getElementById('flecha-izquierda');
@@ -438,44 +448,42 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         const anchoTarjeta = getAnchoTarjeta(); 
         let margenTarjeta = getMargenTarjeta();
         let totalTarjetasVisibles = 0; 
-
+    
         function getMargenTarjeta() {
-        if (window.innerWidth >= 768) {
+            if (window.innerWidth >= 768) {
                 return 20; 
             } else if  (window.innerWidth >= 322 && window.innerWidth <= 767) {
                 return -59;     
-            } else{
+            } else {
                 return -102; 
             }
         }
-
+    
         function getAnchoTarjeta() {
             if (window.innerWidth >= 1024) {
                 return 268; 
             } else if (window.innerWidth >= 450 && window.innerWidth <= 1023) {
                 return 268; 
-            }  else{
+            } else {
                 return 237; 
             }
         }
-
+    
         function getNumTarjetasPorDesplazamiento() {
             if (window.innerWidth >= 1024) {
                 return 4; 
             } else if (window.innerWidth >= 450 && window.innerWidth <= 1023) {
                 return 2; 
-            }  else{
+            } else {
                 return 1; 
             }
         }
     
-        // Función para contar tarjetas visibles
         function actualizarTotalTarjetasVisibles() {
             totalTarjetasVisibles = Array.from(document.querySelectorAll('.tarjeta'))
                 .filter(tarjeta => tarjeta.style.display !== 'none').length;
         }
     
-        // Función para mostrar u ocultar las flechas del carrusel
         function mostrarFlechas() {
             if (totalTarjetasVisibles <= getNumTarjetasPorDesplazamiento()) {
                 flechaIzquierda.style.display = 'none';
@@ -486,7 +494,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             }
         }
     
-        // Evento para mover el carrusel hacia la derecha
         flechaDerecha.addEventListener('click', () => {
             const numTarjetasPorDesplazamiento = getNumTarjetasPorDesplazamiento();
             desplazamiento -= (anchoTarjeta + margenTarjeta) * numTarjetasPorDesplazamiento;
@@ -496,7 +503,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             contenedor.style.transform = `translateX(${desplazamiento}px)`;
         });
     
-        // Evento para mover el carrusel hacia la izquierda
         flechaIzquierda.addEventListener('click', () => {
             const numTarjetasPorDesplazamiento = getNumTarjetasPorDesplazamiento();
             desplazamiento += (anchoTarjeta + margenTarjeta) * numTarjetasPorDesplazamiento;
@@ -505,30 +511,34 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             }
             contenedor.style.transform = `translateX(${desplazamiento}px)`;
         });
-
+    
         const precioInput = document.getElementById('precio');
         const ubicacionSelect = document.getElementById('ubicacion');
         const tipoPropiedadSelect = document.getElementById('tipo-propiedad');
-        const tamanoInput = document.getElementById('tamano');
+        const areaInput = document.getElementById('area');
+        const ciudadSelect = document.getElementById('ciudad');
     
         function filtrarTarjetas() {
             const precioMaximo = Number(precioInput.value);
             const ubicacionSeleccionada = ubicacionSelect.value;
             const tipoPropiedadSeleccionado = tipoPropiedadSelect.value;
-            const tamanoMinimo = Number(tamanoInput.value);
+            const areaMinimo = Number(areaInput.value);
+            const ciudadSeleccionada = ciudadSelect.value;
             let coincidencias = 0;
     
             document.querySelectorAll('.tarjeta').forEach(tarjeta => {
                 const precioTarjeta = Number(tarjeta.dataset.precio);
                 const ubicacionTarjeta = tarjeta.dataset.ubicacion;
                 const tipoPropiedadTarjeta = tarjeta.dataset.tipo;
-                const tamanoTarjeta = Number(tarjeta.dataset.tamano);
+                const areaTarjeta = Number(tarjeta.dataset.area);
+                const ciudadTarjeta = tarjeta.dataset.ciudad;
                 const cumplePrecio = precioMaximo ? precioTarjeta <= precioMaximo : true;
                 const cumpleUbicacion = ubicacionSeleccionada ? ubicacionTarjeta === ubicacionSeleccionada : true;
                 const cumpleTipo = tipoPropiedadSeleccionado ? tipoPropiedadTarjeta === tipoPropiedadSeleccionado : true;
-                const cumpleTamano = tamanoMinimo ? tamanoTarjeta >= tamanoMinimo : true;
+                const cumplearea = areaMinimo ? areaTarjeta >= areaMinimo : true;
+                const cumpleCiudad = ciudadSeleccionada ? ciudadTarjeta === ciudadSeleccionada : true; 
     
-                if (cumplePrecio && cumpleUbicacion && cumpleTipo && cumpleTamano) {
+                if (cumplePrecio && cumpleUbicacion && cumpleTipo && cumplearea && cumpleCiudad) { 
                     tarjeta.style.display = 'block'; 
                     coincidencias++;
                 } else {
@@ -550,15 +560,28 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             const value = Number(precioInput.value);
             if (value < 0) {
                 precioInput.value = 0;
-            } else if (value % 100 !== 0) {
-                precioInput.value = Math.round(value / 100) * 100; 
             }
             filtrarTarjetas();
         });
-    
+
+        areaInput.addEventListener('input', () => {
+            const value = Number(areaInput.value);
+            if (value < 0) {
+                areaInput.value = 0;
+            }
+            filtrarTarjetas(); 
+        });
+
         ubicacionSelect.addEventListener('change', filtrarTarjetas);
         tipoPropiedadSelect.addEventListener('change', filtrarTarjetas);
-        tamanoInput.addEventListener('input', filtrarTarjetas);
+        tamanoInput.addEventListener('input', () => {
+            const value = Number(tamanoInput.value);
+            if (value < 0) {
+                tamanoInput.value = 0;
+            }
+            filtrarTarjetas();
+        });
+        ciudadSelect.addEventListener('change', filtrarTarjetas); 
     
         document.addEventListener('DOMContentLoaded', () => {
             actualizarTotalTarjetasVisibles(); 
@@ -571,7 +594,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             mostrarFlechas(); 
         });
     
-       function startCounting() {
+        function startCounting() {
             const counters = document.querySelectorAll('.counter');
             counters.forEach(counter => {
                 counter.innerText = '0';
@@ -579,7 +602,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     const target = +counter.getAttribute('data-target');
                     const count = +counter.innerText;
     
-                    const increment = target / 100; // 
+                    const increment = target / 100; 
     
                     if (count < target) {
                         counter.innerText = Math.ceil(count + increment);
@@ -607,6 +630,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     
         observer.observe(statsSection);
     </script>
+    
 
 
 <script>
@@ -630,7 +654,7 @@ document.addEventListener("DOMContentLoaded", function () {
     cardTitle.textContent = propiedad.titulo;
     cardDescription.textContent = propiedad.descripcion;
     cardPrice.textContent = `Precio: $${propiedad.precio}`;
-    cardArea.textContent = `Área: ${propiedad.area} m²`;
+    cardArea.textContent = `Tamaño: ${propiedad.area} m²`;
     cardLocation.textContent = `Ubicación: ${propiedad.ubicacion}`;
 
     cardLink.href = `venta.html?id=${propiedad.id}`;
