@@ -71,6 +71,66 @@ const propiedades = [
         area: 200,
         coordenadas: { lat: -34.607, lng: -58.389 }
     },
+    {
+        id: '7',
+        imagen: "img/carrusel/carrucel_in_2.webp",
+        titulo: "Residencial: Casa de Campo con Piscina",
+        tipo: "La Molina",
+        descripcion: "Hermosa casa de campo de 4 habitaciones con piscina privada, ideal para escapadas de fin de semana.",
+        precio: 400000,
+        ubicacion: "Campo Verde",
+        ciudad: "San Isidro",
+        area: 200,
+        coordenadas: { lat: -34.607, lng: -58.389 }
+    },
+    {
+        id: '8',
+        imagen: "img/carrusel/carrucel_in_2.webp",
+        titulo: "Residencial: Casa de Campo con Piscina",
+        tipo: "La Molina",
+        descripcion: "Hermosa casa de campo de 4 habitaciones con piscina privada, ideal para escapadas de fin de semana.",
+        precio: 400000,
+        ubicacion: "Campo Verde",
+        ciudad: "San Isidro",
+        area: 200,
+        coordenadas: { lat: -34.607, lng: -58.389 }
+    },
+    {
+        id: '9',
+        imagen: "img/carrusel/carrucel_in_2.webp",
+        titulo: "Residencial: Casa de Campo con Piscina",
+        tipo: "La Molina",
+        descripcion: "Hermosa casa de campo de 4 habitaciones con piscina privada, ideal para escapadas de fin de semana.",
+        precio: 400000,
+        ubicacion: "Campo Verde",
+        ciudad: "San Isidro",
+        area: 200,
+        coordenadas: { lat: -34.607, lng: -58.389 }
+    },
+    {
+        id: '10',
+        imagen: "img/carrusel/carrucel_in_2.webp",
+        titulo: "Residencial: Casa de Campo con Piscina",
+        tipo: "La Molina",
+        descripcion: "Hermosa casa de campo de 4 habitaciones con piscina privada, ideal para escapadas de fin de semana.",
+        precio: 400000,
+        ubicacion: "Campo Verde",
+        ciudad: "San Isidro",
+        area: 200,
+        coordenadas: { lat: -34.607, lng: -58.389 }
+    },
+    {
+        id: '11',
+        imagen: "img/carrusel/carrucel_in_2.webp",
+        titulo: "Residencial: Casa de Campo con Piscina",
+        tipo: "La Molina",
+        descripcion: "Hermosa casa de campo de 4 habitaciones con piscina privada, ideal para escapadas de fin de semana.",
+        precio: 400000,
+        ubicacion: "Campo Verde",
+        ciudad: "San Isidro",
+        area: 200,
+        coordenadas: { lat: -34.607, lng: -58.389 }
+    },
 ];
 
 
