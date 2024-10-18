@@ -63,7 +63,7 @@ const propiedades = [
         id: '6',
         imagen: "img/carrusel/carrucel_in_2.webp",
         titulo: "Residencial: Casa de Campo con Piscina",
-        tipo: "La Molina",
+        tipo: "industrial",
         descripcion: "Hermosa casa de campo de 4 habitaciones con piscina privada, ideal para escapadas de fin de semana.",
         precio: 400000,
         ubicacion: "Campo Verde",
@@ -74,63 +74,173 @@ const propiedades = [
     {
         id: '7',
         imagen: "img/carrusel/carrucel_in_2.webp",
-        titulo: "Residencial: Casa de Campo con Piscina",
-        tipo: "La Molina",
-        descripcion: "Hermosa casa de campo de 4 habitaciones con piscina privada, ideal para escapadas de fin de semana.",
-        precio: 400000,
-        ubicacion: "Campo Verde",
-        ciudad: "San Isidro",
-        area: 200,
-        coordenadas: { lat: -34.607, lng: -58.389 }
+        titulo: "Casa Moderna con Vista al Mar",
+        tipo: "residencial",
+        descripcion: "Casa de lujo con vistas panorámicas al mar, 5 habitaciones, piscina infinita y terraza.",
+        precio: 850000,
+        ubicacion: "Playa Azul",
+        ciudad: "Mar del Plata",
+        area: 350,
+        coordenadas: { lat: -38.000, lng: -57.550 }
     },
     {
         id: '8',
-        imagen: "img/carrusel/carrucel_in_2.webp",
-        titulo: "Residencial: Casa de Campo con Piscina",
-        tipo: "La Molina",
-        descripcion: "Hermosa casa de campo de 4 habitaciones con piscina privada, ideal para escapadas de fin de semana.",
-        precio: 400000,
-        ubicacion: "Campo Verde",
-        ciudad: "San Isidro",
-        area: 200,
-        coordenadas: { lat: -34.607, lng: -58.389 }
+        imagen: "img/carrusel/carrucel_in_3.webp",
+        titulo: "Oficina Corporativa en el Centro",
+        tipo: "comercial",
+        descripcion: "Oficina moderna de 500m² en el centro de la ciudad, ideal para empresas grandes.",
+        precio: 1200000,
+        ubicacion: "Centro",
+        ciudad: "Buenos Aires",
+        area: 500,
+        coordenadas: { lat: -34.603, lng: -58.381 }
     },
     {
         id: '9',
-        imagen: "img/carrusel/carrucel_in_2.webp",
-        titulo: "Residencial: Casa de Campo con Piscina",
-        tipo: "La Molina",
-        descripcion: "Hermosa casa de campo de 4 habitaciones con piscina privada, ideal para escapadas de fin de semana.",
-        precio: 400000,
-        ubicacion: "Campo Verde",
-        ciudad: "San Isidro",
-        area: 200,
-        coordenadas: { lat: -34.607, lng: -58.389 }
+        imagen: "img/carrusel/carrucel_in_4.webp",
+        titulo: "Terreno Agrícola en Zona Rural",
+        tipo: "terreno",
+        descripcion: "Extenso terreno agrícola de 50 hectáreas, perfecto para proyectos agropecuarios.",
+        precio: 600000,
+        ubicacion: "La Pampa",
+        ciudad: "Santa Rosa",
+        area: 500000,
+        coordenadas: { lat: -36.620, lng: -64.290 }
     },
     {
         id: '10',
-        imagen: "img/carrusel/carrucel_in_2.webp",
-        titulo: "Residencial: Casa de Campo con Piscina",
-        tipo: "La Molina",
-        descripcion: "Hermosa casa de campo de 4 habitaciones con piscina privada, ideal para escapadas de fin de semana.",
-        precio: 400000,
-        ubicacion: "Campo Verde",
-        ciudad: "San Isidro",
-        area: 200,
-        coordenadas: { lat: -34.607, lng: -58.389 }
+        imagen: "img/carrusel/carrucel_in_5.webp",
+        titulo: "Departamento en Edificio Moderno",
+        tipo: "residencial",
+        descripcion: "Departamento de 3 habitaciones en edificio moderno con gimnasio y piscina.",
+        precio: 300000,
+        ubicacion: "Palermo",
+        ciudad: "Buenos Aires",
+        area: 120,
+        coordenadas: { lat: -34.570, lng: -58.430 }
     },
     {
         id: '11',
-        imagen: "img/carrusel/carrucel_in_2.webp",
-        titulo: "Residencial: Casa de Campo con Piscina",
-        tipo: "La Molina",
-        descripcion: "Hermosa casa de campo de 4 habitaciones con piscina privada, ideal para escapadas de fin de semana.",
-        precio: 400000,
-        ubicacion: "Campo Verde",
-        ciudad: "San Isidro",
-        area: 200,
-        coordenadas: { lat: -34.607, lng: -58.389 }
+        imagen: "img/carrusel/carrucel_in_6.webp",
+        titulo: "Nave Industrial con Almacén",
+        tipo: "industrial",
+        descripcion: "Nave industrial de 2000m² con área de almacenamiento y oficinas.",
+        precio: 1500000,
+        ubicacion: "Parque Industrial",
+        ciudad: "Rosario",
+        area: 2000,
+        coordenadas: { lat: -32.950, lng: -60.640 }
     },
+    {
+        id: '12',
+        imagen: "img/carrusel/carrucel_in_7.webp",
+        titulo: "Penthouse en Zona Exclusiva",
+        tipo: "residencial",
+        descripcion: "Lujoso penthouse de 4 habitaciones con jacuzzi y vistas a la ciudad.",
+        precio: 950000,
+        ubicacion: "Recoleta",
+        ciudad: "Buenos Aires",
+        area: 280,
+        coordenadas: { lat: -34.588, lng: -58.397 }
+    },
+    {
+        id: '13',
+        imagen: "img/carrusel/carrucel_in_8.webp",
+        titulo: "Local Comercial en Esquina Céntrica",
+        tipo: "comercial",
+        descripcion: "Amplio local comercial en esquina con gran visibilidad, ideal para franquicias.",
+        precio: 400000,
+        ubicacion: "Centro Histórico",
+        ciudad: "Córdoba",
+        area: 180,
+        coordenadas: { lat: -31.420, lng: -64.188 }
+    },
+    {
+        id: '14',
+        imagen: "img/carrusel/carrucel_in_9.webp",
+        titulo: "Casa de Montaña con Chimenea",
+        tipo: "residencial",
+        descripcion: "Acogedora casa de montaña de 3 habitaciones, ideal para retiros vacacionales.",
+        precio: 550000,
+        ubicacion: "Valle de las Leñas",
+        ciudad: "Mendoza",
+        area: 150,
+        coordenadas: { lat: -35.130, lng: -70.020 }
+    },
+    {
+        id: '15',
+        imagen: "img/carrusel/carrucel_in_10.webp",
+        titulo: "Estación de Servicio en Ruta Nacional",
+        tipo: "comercial",
+        descripcion: "Estación de servicio con tienda y amplio espacio de carga en una ruta nacional transitada.",
+        precio: 2200000,
+        ubicacion: "Ruta 9",
+        ciudad: "Rosario",
+        area: 3000,
+        coordenadas: { lat: -32.950, lng: -60.670 }
+    },
+    {
+        id: '16',
+        imagen: "img/carrusel/carrucel_in_11.webp",
+        titulo: "Cabaña Rústica en Zona Turística",
+        tipo: "residencial",
+        descripcion: "Encantadora cabaña de madera, perfecta para disfrutar de la naturaleza en un entorno turístico.",
+        precio: 270000,
+        ubicacion: "Villa La Angostura",
+        ciudad: "Neuquén",
+        area: 100,
+        coordenadas: { lat: -40.760, lng: -71.640 }
+    },
+    {
+        id: '17',
+        imagen: "img/carrusel/carrucel_in_12.webp",
+        titulo: "Galpón Industrial con Oficina",
+        tipo: "industrial",
+        descripcion: "Amplio galpón de 3000m² con oficina administrativa en zona industrial.",
+        precio: 1800000,
+        ubicacion: "Avellaneda",
+        ciudad: "Buenos Aires",
+        area: 3000,
+        coordenadas: { lat: -34.670, lng: -58.370 }
+    },
+    {
+        id: '18',
+        imagen: "img/carrusel/carrucel_in_13.webp",
+        titulo: "Terreno para Desarrollo Inmobiliario",
+        tipo: "terreno",
+        descripcion: "Terreno de 10 hectáreas, ideal para desarrollar un barrio cerrado.",
+        precio: 2000000,
+        ubicacion: "Pilar",
+        ciudad: "Buenos Aires",
+        area: 100000,
+        coordenadas: { lat: -34.450, lng: -58.910 }
+    },
+    {
+        id: '19',
+        imagen: "img/carrusel/carrucel_in_14.webp",
+        titulo: "Hotel Boutique en Zona Turística",
+        tipo: "comercial",
+        descripcion: "Hotel boutique con 15 habitaciones y spa en una zona turística de alta demanda.",
+        precio: 3500000,
+        ubicacion: "Bariloche",
+        ciudad: "Río Negro",
+        area: 800,
+        coordenadas: { lat: -41.135, lng: -71.310 }
+    },
+    {
+        id: '20',
+        imagen: "img/carrusel/carrucel_in_15.webp",
+        titulo: "Casa de Campo con Huerto",
+        tipo: "residencial",
+        descripcion: "Casa de campo con huerto ecológico y vista a las montañas, perfecta para amantes de la naturaleza.",
+        precio: 450000,
+        ubicacion: "Luján de Cuyo",
+        ciudad: "Mendoza",
+        area: 250,
+        coordenadas: { lat: -33.016, lng: -68.880 }
+    }
+    
+    
 ];
 
 
@@ -174,102 +284,6 @@ crearTarjetas();
 
 
 
-function aplicarFiltros() {
-    // Obtener valores seleccionados
-    const distritosSeleccionados = Array.from(document.querySelectorAll('.filtro-distrito:checked')).map(input => input.value);
-    const ciudadesSeleccionadas = Array.from(document.querySelectorAll('.filtro-ciudad:checked')).map(input => input.value);
-    const tiposSeleccionados = Array.from(document.querySelectorAll('.filtro-tipo:checked')).map(input => input.value);
-    const precioMin = parseFloat(document.getElementById('precio-min').value) || 0;
-    const precioMax = parseFloat(document.getElementById('precio-max').value) || Infinity;
-    const superficieMin = parseFloat(document.getElementById('superficie-min').value) || 0;
-    const superficieMax = parseFloat(document.getElementById('superficie-max').value) || Infinity;
-
-    const propiedadesFiltradas = propiedades.filter(propiedad => {
-        const precioValido = propiedad.precio >= precioMin && propiedad.precio <= precioMax;
-        const superficieValida = propiedad.area >= superficieMin && propiedad.area <= superficieMax;
-
-        // Validar ciudad y distrito
-        const ciudadValida = ciudadesSeleccionadas.length === 0 || ciudadesSeleccionadas.includes(propiedad.ciudad);
-        const distritoValido = distritosSeleccionados.length === 0 || distritosSeleccionados.includes(propiedad.ubicacion);
-
-        // Validar tipo
-        const tipoValido = tiposSeleccionados.length === 0 || tiposSeleccionados.includes(propiedad.tipo);
-
-        return precioValido && superficieValida && ciudadValida && distritoValido && tipoValido;
-    });
-
-    const contenedor = document.getElementById('tarjetas-container-filtrado');
-    contenedor.innerHTML = '';
-
-    if (propiedadesFiltradas.length === 0) {
-        const mensajeError = document.createElement('div');
-        mensajeError.className = 'mensaje-error';
-        mensajeError.textContent = 'No se encontraron propiedades con esos criterios.';
-        contenedor.appendChild(mensajeError);
-
-        // Crear botón para resetear filtros
-        const botonResetear = document.createElement('button');
-        botonResetear.textContent = 'Resetear Filtro';
-        botonResetear.className = 'button_reset_2';
-        botonResetear.style = `
-            margin-top: 10px;
-            background-color: #d00a0a; 
-            border-radius: 5px; 
-            width: 150px; 
-            height: 40px; 
-            color: white; 
-            font-weight: bold; 
-            border: none; 
-            cursor: pointer; 
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        `;
-
-        // Agregar evento para resetear filtros
-        botonResetear.addEventListener('click', () => {
-            resetearFiltros_2();
-        });
-
-        contenedor.appendChild(botonResetear);
-    } else {
-        propiedadesFiltradas.forEach(propiedad => {
-            const tarjeta = document.createElement('div');
-            tarjeta.className = 'property-card';
-
-            const mapaSrc = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.748678842572!2d${propiedad.coordenadas.lng}!3d${propiedad.coordenadas.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb24a5f500c17%3A0x5b02910719db8c3a!2sGoogleplex!5e0!3m2!1ses!2s!4v1635946085203!5m2!1ses!2s`;
-
-            tarjeta.innerHTML = `
-                <img src="${propiedad.imagen}" alt="${propiedad.titulo}">
-                <div class="property-details">
-                    <h3>${propiedad.titulo}</h3>
-                    <p>${propiedad.descripcion}</p>
-                    <p>Ubicación: ${propiedad.ciudad}, ${propiedad.ubicacion}</p>
-                    <p>Precio: $${propiedad.precio}, Tamaño: ${propiedad.area}m²</p>
-                </div>
-                <div class="mapa">
-                    <iframe src="${mapaSrc}" allowfullscreen=""></iframe>
-                </div>
-                <div class="property-actions">
-                    <button onclick="contactar('${propiedad.titulo}')"><i class="fas fa-envelope"></i> Contactar</button>
-                    <button onclick="llamar('${propiedad.titulo}')"><i class="fas fa-phone-alt"></i> Llamar</button>
-                </div>
-            `;
-            contenedor.appendChild(tarjeta);
-        });
-    }
-}
-
-// Función para resetear los filtros
-function resetearFiltros_2() {
-    document.querySelectorAll('.filtro-distrito:checked').forEach(input => input.checked = false);
-    document.querySelectorAll('.filtro-ciudad:checked').forEach(input => input.checked = false);
-    document.querySelectorAll('.filtro-tipo:checked').forEach(input => input.checked = false);
-    document.getElementById('precio-min').value = '';
-    document.getElementById('precio-max').value = '';
-    document.getElementById('superficie-min').value = '';
-    document.getElementById('superficie-max').value = '';
-    aplicarFiltros();
-}
 
 
 
