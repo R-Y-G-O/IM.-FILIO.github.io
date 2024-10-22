@@ -456,6 +456,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 }
 
+#icon_gi{
+    transform: scaleX(-1);
+    margin-left: 7px;
+}
+
+#icon{
+    margin-right: 7px;
+}
 
 
 
@@ -479,7 +487,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     gap: 10px;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: nowrap; 
+    flex-wrap: wrap; 
     box-shadow: 0 4px 6px var(--light-black);
 }
 
@@ -542,14 +550,27 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 @media (max-width: 374px){
     .tarjeta_filtro{
-        min-width: 155px;
+        min-width: 205px;
     }
+    .filtros_busqueda {
+        flex-direction: column; 
+        align-items: stretch;
+    }
+
+   
 }
-@media (min-width: 375px) and (max-width: 767px) {
+@media (min-width: 375px) and (max-width: 768px) {
     .tarjeta_filtro{
-        min-width: 200px;
+        min-width: 268px;
     }
+
+    .filtros {
+        flex: 1 1 calc(50% - 10px);
+        align-items: stretch; 
+    }
+
 }
+
 
 .tarjeta_filtro img {
     width: 100%;
