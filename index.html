@@ -10,7 +10,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IM. FILIO</title>
-    <link rel="stylesheet" href="estilos/estilo.css">
+    <link rel="stylesheet" href="estilos/index.css">
+    <link rel="stylesheet" href="estilos/estilo_general.css">
     <link rel="stylesheet" href="estilos/botones.css">
     <link rel="stylesheet" href="estilos/carrusel.css">
     <link rel="stylesheet" href="estilos/navbar.css">
@@ -173,8 +174,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
       <section class="features-section">
-        <div class="contenedor">
-            <div class="filtros-busqueda">
+        <div class="contenedor_filtro">
+            <div class="filtros_busqueda">
                 <div class="filtro">
                     <label for="ciudad"><i class="fa-solid fa-map"></i> Ciudad</label>
                     <select id="ciudad">
@@ -216,7 +217,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             </div>
     
             <div class="carrusel">
-                <div class="tarjetas-contenedor" id="tarjetas-container"></div>
+                <div class="tarjetas_contenedor_filtro" id="tarjetas_container"></div>
                 <div class="flechas">
                     <button class="flecha" id="flecha-izquierda">&#10094;</button>
                     <button class="flecha" id="flecha-derecha">&#10095;</button>
@@ -230,7 +231,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
     
 
-    <section class="info-section">
+    <section class="testimonial-section">
               <h1 class="title_imfromacion"><i class="fa-solid fa-circle-exclamation" id="icon"></i>TESTIMONIOS DE CLIENTES<i class="fa-solid fa-circle-exclamation" id="icon_gi"></i></h1>
               <div class="testimonials-container">
                 <div class="testimonials">
@@ -308,10 +309,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
 
-<section id="proyectos">
+<section class="properties_section">
   <h1 class="title">
-      <i class="fa-solid fa-drafting-compass" id="icon"></i>ENCUENTRA TU INMUEBLE
-      <i class="fa-solid fa-drafting-compass" id="icon_gi"></i>
+      <i class="fa-solid fa-drafting-compass" id="icon"></i> ENCUENTRA TU INMUEBLE <i class="fa-solid fa-drafting-compass" id="icon_gi"></i>
   </h1>
   <p class="text">
     Busca y encuentra miles de propiedades en todas las ciudades. Estás a un paso de encontrar tu inmueble; en la ciudad donde anhelas vivir. No esperes más, encuéntralo aquí.
@@ -370,10 +370,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
 
-    <section class="line"></section>
-    <section class="cli-section">
+    <section class="services-section">
         <h2 class="title_imfromacion">SERVICIOS</h2>
-        <div class="container_servicios">
+        <div class="container_services">
             <div class="service">
             <a href="venta.html">
                 <i class="fas fa-home"></i>
@@ -439,8 +438,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     <footer>
       <div id="pie-container"></div>
     </footer>
+
 <script>
-        const contenedor = document.getElementById('tarjetas-container');
+    /*FUNCION FILTRAR CARTAS*/
+        const contenedor = document.getElementById('tarjetas_container');
         const flechaIzquierda = document.getElementById('flecha-izquierda');
         const flechaDerecha = document.getElementById('flecha-derecha');
         const mensajeNoCoincidencias = document.getElementById('mensaje-no-coincidencias');
@@ -481,7 +482,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         }
     
         function actualizarTotalTarjetasVisibles() {
-            totalTarjetasVisibles = Array.from(document.querySelectorAll('.tarjeta'))
+            totalTarjetasVisibles = Array.from(document.querySelectorAll('.tarjeta_filtro'))
                 .filter(tarjeta => tarjeta.style.display !== 'none').length;
         }
     
@@ -527,7 +528,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             const areaMinimo = Number(areaInput.value);
             let coincidencias = 0;
     
-            document.querySelectorAll('.tarjeta').forEach(tarjeta => {
+            document.querySelectorAll('.tarjeta_filtro').forEach(tarjeta => {
                 const ciudadTarjeta = tarjeta.dataset.ciudad;
                 const precioTarjeta = Number(tarjeta.dataset.precio);
                 const ubicacionTarjeta = tarjeta.dataset.ubicacion;
@@ -608,8 +609,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             actualizarTotalTarjetasVisibles(); 
             mostrarFlechas(); 
         });
+        
 </script>
 <script>
+    /*FUNCION CONTADOR SECION ESTADISTICAS*/
         function startCounting() {
             const counters = document.querySelectorAll('.counter');
             counters.forEach(counter => {
@@ -647,6 +650,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         observer.observe(statsSection);
 </script>
 <script>
+    /*CARTA DESLIZABLE*/
 document.addEventListener("DOMContentLoaded", function () {
     const slideCard = document.getElementById("slideCard");
     const cardImage = document.getElementById("cardImage");

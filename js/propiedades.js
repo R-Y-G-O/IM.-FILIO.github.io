@@ -247,12 +247,12 @@ const propiedades = [
 
 // Función para crear las tarjetas INDEX
 function crearTarjetas() {
-    const contenedor = document.getElementById('tarjetas-container');
+    const contenedor = document.getElementById('tarjetas_container');
     contenedor.innerHTML = ''; 
 
     propiedades.forEach(propiedad => {
         const tarjeta = document.createElement('div');
-        tarjeta.className = 'tarjeta';
+        tarjeta.className = 'tarjeta_filtro';
         tarjeta.dataset.precio = propiedad.precio;
         tarjeta.dataset.ciudad = propiedad.ciudad;
         tarjeta.dataset.ubicacion = propiedad.ubicacion;

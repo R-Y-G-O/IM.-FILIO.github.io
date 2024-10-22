@@ -1,4 +1,44 @@
+:root {
+    --primary-green: rgb(122,194,0);
+    --white: #ffffff;
+    --light-grey: #f4f4f4fd;
+    --dark-grey: hsl(0, 0%, 20%);
+    --highlight-green: rgb(0, 255, 90);
+    --light-black: rgba(0, 0, 0, 0.5);
+    --white-opacity: rgba(255, 255, 255, 0.5);
+    --text-dark: #000000;
+    --text-grey: #464646;
+    --text-white: #fff;
+    --border-color: #ddd;
+}
 
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Tw Cen MT', sans-serif;
+    cursor: url(../img/maus/cursor.png), auto;
+    
+}
+
+
+a, button, .interactive-element,.clickable, .interactive, #botton{
+    cursor: url(../img/maus/pointer.png), pointer; 
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* Estilo global */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+
+
+
+/*NACVAR DE PAGINA*/
 .navbar-container {
     position: fixed;
     top: 0;
@@ -362,7 +402,7 @@
 
 
 
-/* Estilo del pie de página */
+/* ESTILO PIE DE PAGINA*/
 footer {
     background-color: var(--dark-grey);
     font-size: 14px;
