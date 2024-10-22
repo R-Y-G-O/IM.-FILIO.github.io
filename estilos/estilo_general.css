@@ -295,6 +295,16 @@ a {
     background-color: #388e3c;
 }
 
+#icon_gi{
+    transform: scaleX(-1);
+    margin-left: 7px;
+}
+
+#icon{
+    margin-right: 7px;
+}
+
+
 /* Ajuste de responsividad para pantallas pequeñas */
 @media (max-width: 1400px) {
     .navbar-left .logo{
@@ -542,3 +552,4 @@ footer {
     margin-top: 20px;
 }
 }
+
