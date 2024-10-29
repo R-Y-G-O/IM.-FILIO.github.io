@@ -7,7 +7,6 @@
   border: 3px solid green; 
   padding: 20px 40px; 
   font-size: 20px; 
-  cursor: pointer;
   overflow: hidden; 
   transition: color 1s ease, background-color 1s ease, border-color 1s ease, transform 1s ease, box-shadow 1s ease;
   border-radius: 30px;

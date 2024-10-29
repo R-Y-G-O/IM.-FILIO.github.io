@@ -1,7 +1,7 @@
 :root {
     --primary-green: rgb(122,194,0);
     --white: #ffffff;
-    --light-grey: #f4f4f4fd;
+    --light-grey: rgb(248, 248, 248);
     --dark-grey: hsl(0, 0%, 20%);
     --highlight-green: rgb(0, 255, 90);
     --light-black: rgba(0, 0, 0, 0.5);
@@ -21,7 +21,7 @@ body, html {
 }
 
 
-a, button, .interactive-element,.clickable, .interactive, #botton{
+a, button, .interactive-element,.clickable, .interactive, input[type="checkbox"]{
     cursor: url(../img/maus/pointer.png), pointer; 
 }
 
