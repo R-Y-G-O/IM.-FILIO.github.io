@@ -82,8 +82,8 @@
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
         //se esta utilizando emailjs para el envio del formulario 
-        (function() {
-            emailjs.init('Y28WmP_fwZjZfdkmX');
+        (function() { //API key de emailjs
+            emailjs.init('');
         })();
 
         document.getElementById('contact-form').addEventListener('submit', function(event) {
@@ -118,8 +118,8 @@
             if (!firstSubmissionTime) {
                 localStorage.setItem('firstSubmissionTime', currentTime);
             }
-
-            emailjs.sendForm('service_syq9sgg', 'template_84c5f58', this)
+                     //service id y templare id de emailjs
+            emailjs.sendForm('', '', this)
                 .then(function() {
                     alert('¡Mensaje enviado correctamente!');
                     document.getElementById('contact-form').reset(); 
