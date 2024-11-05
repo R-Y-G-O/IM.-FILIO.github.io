@@ -97,7 +97,7 @@ const propiedades = [
     },
     {
         id: '9',
-        imagen: "img/carrusel/carrucel_in_4.webp",
+        imagen: "img/carrusel/carrucel_in_1.webp",
         titulo: "Terreno Agrícola en Zona Rural",
         tipo: "terreno",
         descripcion: "Extenso terreno agrícola de 50 hectáreas, perfecto para proyectos agropecuarios.",
@@ -109,7 +109,7 @@ const propiedades = [
     },
     {
         id: '10',
-        imagen: "img/carrusel/carrucel_in_5.webp",
+        imagen: "img/carrusel/carrucel_in_1.webp",
         titulo: "Departamento en Edificio Moderno",
         tipo: "residencial",
         descripcion: "Departamento de 3 habitaciones en edificio moderno con gimnasio y piscina.",
@@ -121,7 +121,7 @@ const propiedades = [
     },
     {
         id: '11',
-        imagen: "img/carrusel/carrucel_in_6.webp",
+        imagen: "img/carrusel/carrucel_in_1.webp",
         titulo: "Nave Industrial con Almacén",
         tipo: "industrial",
         descripcion: "Nave industrial de 2000m² con área de almacenamiento y oficinas.",
@@ -133,7 +133,7 @@ const propiedades = [
     },
     {
         id: '12',
-        imagen: "img/carrusel/carrucel_in_7.webp",
+        imagen: "img/carrusel/carrucel_in_1.webp",
         titulo: "Penthouse en Zona Exclusiva",
         tipo: "residencial",
         descripcion: "Lujoso penthouse de 4 habitaciones con jacuzzi y vistas a la ciudad.",
@@ -145,7 +145,7 @@ const propiedades = [
     },
     {
         id: '13',
-        imagen: "img/carrusel/carrucel_in_8.webp",
+        imagen: "img/carrusel/carrucel_in_1.webp",
         titulo: "Local Comercial en Esquina Céntrica",
         tipo: "comercial",
         descripcion: "Amplio local comercial en esquina con gran visibilidad, ideal para franquicias.",
@@ -157,7 +157,7 @@ const propiedades = [
     },
     {
         id: '14',
-        imagen: "img/carrusel/carrucel_in_9.webp",
+        imagen: "img/carrusel/carrucel_in_1.webp",
         titulo: "Casa de Montaña con Chimenea",
         tipo: "residencial",
         descripcion: "Acogedora casa de montaña de 3 habitaciones, ideal para retiros vacacionales.",
@@ -169,7 +169,7 @@ const propiedades = [
     },
     {
         id: '15',
-        imagen: "img/carrusel/carrucel_in_10.webp",
+        imagen: "img/carrusel/carrucel_in_1.webp",
         titulo: "Estación de Servicio en Ruta Nacional",
         tipo: "comercial",
         descripcion: "Estación de servicio con tienda y amplio espacio de carga en una ruta nacional transitada.",
@@ -181,7 +181,7 @@ const propiedades = [
     },
     {
         id: '16',
-        imagen: "img/carrusel/carrucel_in_11.webp",
+        imagen: "img/carrusel/carrucel_in_1.webp",
         titulo: "Cabaña Rústica en Zona Turística",
         tipo: "residencial",
         descripcion: "Encantadora cabaña de madera, perfecta para disfrutar de la naturaleza en un entorno turístico.",
@@ -193,7 +193,7 @@ const propiedades = [
     },
     {
         id: '17',
-        imagen: "img/carrusel/carrucel_in_12.webp",
+        imagen: "img/carrusel/carrucel_in_1.webp",
         titulo: "Galpón Industrial con Oficina",
         tipo: "industrial",
         descripcion: "Amplio galpón de 3000m² con oficina administrativa en zona industrial.",
@@ -205,7 +205,7 @@ const propiedades = [
     },
     {
         id: '18',
-        imagen: "img/carrusel/carrucel_in_13.webp",
+        imagen: "img/carrusel/carrucel_in_1.webp",
         titulo: "Terreno para Desarrollo Inmobiliario",
         tipo: "terreno",
         descripcion: "Terreno de 10 hectáreas, ideal para desarrollar un barrio cerrado.",
@@ -217,7 +217,7 @@ const propiedades = [
     },
     {
         id: '19',
-        imagen: "img/carrusel/carrucel_in_14.webp",
+        imagen: "img/carrusel/carrucel_in_1.webp",
         titulo: "Hotel Boutique en Zona Turística",
         tipo: "comercial",
         descripcion: "Hotel boutique con 15 habitaciones y spa en una zona turística de alta demanda.",
@@ -229,7 +229,7 @@ const propiedades = [
     },
     {
         id: '20',
-        imagen: "img/carrusel/carrucel_in_15.webp",
+        imagen: "img/carrusel/carrucel_in_1.webp",
         titulo: "Casa de Campo con Huerto",
         tipo: "residencial",
         descripcion: "Casa de campo con huerto ecológico y vista a las montañas, perfecta para amantes de la naturaleza.",
